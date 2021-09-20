@@ -19,7 +19,6 @@ class RequestService {
         dateformatter.dateFormat = "yyyy-MM-dd-"
         var timeDay = Date()
        
-
         switch times {
         case .today:
             break
@@ -50,7 +49,7 @@ class RequestService {
                         return
                     }
                     
-                    guard let statusCode = (result.response as? HTTPURLResponse)?.statusCode, 200..<299 ~= statusCode else {
+                    guard let statusCode = (result.response)?.statusCode, 200..<299 ~= statusCode else {
                         closure(.failure(.invalidResponse))
                         return
                     }

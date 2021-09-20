@@ -15,7 +15,7 @@ class ArrivalViewController: ButtonBarPagerTabStripViewController {
         let yesterday = PageArrivalVC(Day: .yesterday, itemInfo: "Вчера", color: .blue, viewModel: PageArrivalModelView())
         let today = PageArrivalVC(Day: .today, itemInfo: "Сегодня", color: .brown, viewModel: PageArrivalModelView())
         let tommorow = PageArrivalVC(Day: .tomorrow, itemInfo: "Завтра", color: .cyan, viewModel: PageArrivalModelView())
-        return [today, yesterday, tommorow]
+        return [ yesterday, today, tommorow]
     }()
     
     

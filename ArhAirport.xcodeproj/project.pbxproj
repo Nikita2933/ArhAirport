@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1109614226F91FDD00C78F9F /* ArrivalViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1109614126F91FDD00C78F9F /* ArrivalViewCell.swift */; };
 		11809BD626F61724007FC1E3 /* DeparturesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11809BD526F61724007FC1E3 /* DeparturesModel.swift */; };
 		11D9A69D26F8F8BB00EE4C9E /* PageArrivalModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D9A69C26F8F8BB00EE4C9E /* PageArrivalModelView.swift */; };
 		11D9A69F26F8F8D100EE4C9E /* ArrivalModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D9A69E26F8F8D100EE4C9E /* ArrivalModelView.swift */; };
@@ -29,11 +30,12 @@
 		A86600A926B9037900DA28A9 /* RequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86600A826B9037900DA28A9 /* RequestService.swift */; };
 		A8E9142B26C40C66003CA804 /* DepartureModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E9142A26C40C66003CA804 /* DepartureModelView.swift */; };
 		A8E9142D26C415D0003CA804 /* PageDepartureModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E9142C26C415D0003CA804 /* PageDepartureModelView.swift */; };
-		A8E9143226C55097003CA804 /* DepartureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E9143126C55097003CA804 /* DepartureCell.swift */; };
+		A8E9143226C55097003CA804 /* DepartureViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E9143126C55097003CA804 /* DepartureViewCell.swift */; };
 		A8F2361426A6B3E50022A750 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F2361326A6B3E50022A750 /* Alert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1109614126F91FDD00C78F9F /* ArrivalViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalViewCell.swift; sourceTree = "<group>"; };
 		11809BD526F61724007FC1E3 /* DeparturesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeparturesModel.swift; sourceTree = "<group>"; };
 		11D9A69C26F8F8BB00EE4C9E /* PageArrivalModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageArrivalModelView.swift; sourceTree = "<group>"; };
 		11D9A69E26F8F8D100EE4C9E /* ArrivalModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalModelView.swift; sourceTree = "<group>"; };
@@ -59,7 +61,7 @@
 		A86600A826B9037900DA28A9 /* RequestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestService.swift; sourceTree = "<group>"; };
 		A8E9142A26C40C66003CA804 /* DepartureModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartureModelView.swift; sourceTree = "<group>"; };
 		A8E9142C26C415D0003CA804 /* PageDepartureModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageDepartureModelView.swift; sourceTree = "<group>"; };
-		A8E9143126C55097003CA804 /* DepartureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartureCell.swift; sourceTree = "<group>"; };
+		A8E9143126C55097003CA804 /* DepartureViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartureViewCell.swift; sourceTree = "<group>"; };
 		A8F2361326A6B3E50022A750 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		B9985311722FDF59AF7F3EB9 /* Pods-ArhAirport.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArhAirport.debug.xcconfig"; path = "Target Support Files/Pods-ArhAirport/Pods-ArhAirport.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -76,13 +78,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1109613D26F91E5800C78F9F /* Departure */ = {
+			isa = PBXGroup;
+			children = (
+				A8E9142A26C40C66003CA804 /* DepartureModelView.swift */,
+				A8E9142C26C415D0003CA804 /* PageDepartureModelView.swift */,
+			);
+			path = Departure;
+			sourceTree = "<group>";
+		};
+		1109613E26F91E6700C78F9F /* Arrival */ = {
+			isa = PBXGroup;
+			children = (
+				11D9A69E26F8F8D100EE4C9E /* ArrivalModelView.swift */,
+				11D9A69C26F8F8BB00EE4C9E /* PageArrivalModelView.swift */,
+			);
+			path = Arrival;
+			sourceTree = "<group>";
+		};
+		1109613F26F91E7E00C78F9F /* Contact */ = {
+			isa = PBXGroup;
+			children = (
+				A83BEAD126A55D3400BE2890 /* ContactViewController.swift */,
+			);
+			path = Contact;
+			sourceTree = "<group>";
+		};
+		1109614026F91E9200C78F9F /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				A83BEAD326A55D8100BE2890 /* WeatherViewController.swift */,
+			);
+			path = Weather;
+			sourceTree = "<group>";
+		};
+		1109614326F91FE000C78F9F /* SupportView */ = {
+			isa = PBXGroup;
+			children = (
+				1109614126F91FDD00C78F9F /* ArrivalViewCell.swift */,
+			);
+			path = SupportView;
+			sourceTree = "<group>";
+		};
 		A83BEAD026A55CEB00BE2890 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				A83BEACE26A55C5A00BE2890 /* TabBarViewController.swift */,
 				A83BEAE226A5800300BE2890 /* NavigationController.swift */,
-				A83BEAD126A55D3400BE2890 /* ContactViewController.swift */,
-				A83BEAD326A55D8100BE2890 /* WeatherViewController.swift */,
+				1109614026F91E9200C78F9F /* Weather */,
+				1109613F26F91E7E00C78F9F /* Contact */,
 				A83BEAE726A5972400BE2890 /* DepartureViewController */,
 				A83BEAD926A561EE00BE2890 /* ArrivalTableViewPage */,
 			);
@@ -94,6 +138,7 @@
 			children = (
 				A83BEAD526A55D8F00BE2890 /* ArrivalViewController.swift */,
 				A83BEADA26A5625100BE2890 /* PageArrivalVC.swift */,
+				1109614326F91FE000C78F9F /* SupportView */,
 			);
 			path = ArrivalTableViewPage;
 			sourceTree = "<group>";
@@ -121,10 +166,8 @@
 		A83BEAE826A5AEBE00BE2890 /* ModelView */ = {
 			isa = PBXGroup;
 			children = (
-				A8E9142A26C40C66003CA804 /* DepartureModelView.swift */,
-				A8E9142C26C415D0003CA804 /* PageDepartureModelView.swift */,
-				11D9A69C26F8F8BB00EE4C9E /* PageArrivalModelView.swift */,
-				11D9A69E26F8F8D100EE4C9E /* ArrivalModelView.swift */,
+				1109613E26F91E6700C78F9F /* Arrival */,
+				1109613D26F91E5800C78F9F /* Departure */,
 			);
 			path = ModelView;
 			sourceTree = "<group>";
@@ -168,7 +211,7 @@
 		A8E9143026C5506F003CA804 /* SupportView */ = {
 			isa = PBXGroup;
 			children = (
-				A8E9143126C55097003CA804 /* DepartureCell.swift */,
+				A8E9143126C55097003CA804 /* DepartureViewCell.swift */,
 			);
 			path = SupportView;
 			sourceTree = "<group>";
@@ -303,7 +346,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A8E9143226C55097003CA804 /* DepartureCell.swift in Sources */,
+				A8E9143226C55097003CA804 /* DepartureViewCell.swift in Sources */,
 				A83BEADB26A5625100BE2890 /* PageArrivalVC.swift in Sources */,
 				A8E9142B26C40C66003CA804 /* DepartureModelView.swift in Sources */,
 				A86600A926B9037900DA28A9 /* RequestService.swift in Sources */,
@@ -313,6 +356,7 @@
 				A83BEACF26A55C5A00BE2890 /* TabBarViewController.swift in Sources */,
 				A83BEAD426A55D8100BE2890 /* WeatherViewController.swift in Sources */,
 				A8654A0326A18A86003B67A9 /* AppDelegate.swift in Sources */,
+				1109614226F91FDD00C78F9F /* ArrivalViewCell.swift in Sources */,
 				A8F2361426A6B3E50022A750 /* Alert.swift in Sources */,
 				11D9A69D26F8F8BB00EE4C9E /* PageArrivalModelView.swift in Sources */,
 				A83BEAD226A55D3400BE2890 /* ContactViewController.swift in Sources */,

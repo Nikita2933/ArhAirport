@@ -1,14 +1,14 @@
 //
-//  DepartureCell.swift
+//  ArrivalViewCell.swift
 //  ArhAirport
 //
-//  Created by Никита Иванов on 12.08.2021.
+//  Created by Никита on 20.09.2021.
 //
 
 import UIKit
 import SnapKit
 
-class DepartureCell: UITableViewCell {
+class ArrivalViewCell: UITableViewCell {
 
     let departureLabel: UILabel = {
         $0.font = UIFont.systemFont(ofSize: 14)
@@ -43,7 +43,7 @@ class DepartureCell: UITableViewCell {
         setConstraint()
     }
     
-    func update(data: DepartureItem?) {
+    func update(data: ArrivalItem?) {
         if let data = data {
             departureLabel.text = data.arrivalTime
             aviaCompanyLabel.text = data.company
@@ -51,7 +51,9 @@ class DepartureCell: UITableViewCell {
             flyDirectionLabel.text = data.airportArrival
             
             statusLabel.text = data.remark
-            statusLabel.text?.removeLast(2)
+            if statusLabel.text?.contains("  ") ?? false {
+                statusLabel.text?.removeLast(2)
+            }
         } else {
             departureLabel.text = "Нет данных"
         }
@@ -113,3 +115,4 @@ class DepartureCell: UITableViewCell {
     }
 
 }
+

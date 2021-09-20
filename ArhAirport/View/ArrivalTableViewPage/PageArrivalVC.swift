@@ -35,13 +35,31 @@ class PageArrivalVC: UITableViewController, IndicatorInfoProvider {
     override func viewDidLoad() {
         super.viewDidLoad()
         requestData()
+        setupTableView()
     }
     
     func requestData()  {
-        viewModel.createArrForPageDeparture(times: Day, closure: { arrs in
+        viewModel.createArrForPageArrival(times: Day, closure: { arrs in
             self.arr = arrs
             self.tableView.reloadData()
         })
+    }
+    
+    func setupTableView() {
+        let control = UIRefreshControl()
+        control.rx.controlEvent(.valueChanged).subscribe({ [weak self] _ in
+            self?.requestData()
+            self?.tableView.beginUpdates()
+            control.endRefreshing()
+            self?.tableView.endUpdates()
+        }).disposed(by: disposeBag)
+        
+        tableView.refreshControl = control
+        
+        
+        tableView.estimatedRowHeight = 40.0
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.register(ArrivalViewCell.self, forCellReuseIdentifier: "Departure")
     }
     
     required init?(coder: NSCoder) {
@@ -61,11 +79,12 @@ class PageArrivalVC: UITableViewController, IndicatorInfoProvider {
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let defaultCell = UITableViewCell(style: .default, reuseIdentifier: "Cell")
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Departure") as! ArrivalViewCell
         let data = arr?.embedded.items[indexPath.row]
-        defaultCell.textLabel?.text = data?.airportDeparture ?? ""
-        return defaultCell
+        cell.update(data: data)
+        
+        return cell
+        
     }
 
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {

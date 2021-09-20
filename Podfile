@@ -10,7 +10,6 @@ pod 'Alamofire', '~> 5.4'
 pod 'DTTableViewManager', '~> 8.0.0'
 pod 'SnapKit', '~> 5.0.0'
 pod 'XLPagerTabStrip', '~> 9.0'
-pod 'SwiftSoup'
   # Pods for ArhAirport
 
 end

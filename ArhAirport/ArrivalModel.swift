@@ -40,8 +40,8 @@ struct ArrivalItem: Codable {
     let at2: String?
     let sd1: String
     let sd2: String
-    let st1: String
-    let st2: String
+    let arrivalTime: String
+    let departureTime: String
     let links: ArrivalLinks
     //let embedded: [JSONAny]
 
@@ -59,8 +59,8 @@ struct ArrivalItem: Codable {
         case at2 = "at2"
         case sd1 = "sd1"
         case sd2 = "sd2"
-        case st1 = "st1"
-        case st2 = "st2"
+        case arrivalTime = "st1"
+        case departureTime = "st2"
         case links = "_links"
         //case embedded = "_embedded"
     }

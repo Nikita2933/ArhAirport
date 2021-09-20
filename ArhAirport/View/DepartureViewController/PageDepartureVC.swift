@@ -62,7 +62,7 @@ class PageDepartureVC: UITableViewController, IndicatorInfoProvider {
         
         tableView.estimatedRowHeight = 40.0
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.register(DepartureCell.self, forCellReuseIdentifier: "Departure")
+        tableView.register(DepartureViewCell.self, forCellReuseIdentifier: "Departure")
     }
     
     
@@ -80,7 +80,7 @@ class PageDepartureVC: UITableViewController, IndicatorInfoProvider {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Departure") as! DepartureCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Departure") as! DepartureViewCell
         let data = arr?.embedded.items[indexPath.row]
         cell.update(data: data)
         

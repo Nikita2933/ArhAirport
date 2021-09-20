@@ -11,7 +11,7 @@ class PageArrivalModelView {
     
     let reqService = RequestService()
     
-    func createArrForPageDeparture(times: DayTimePage,closure: @escaping (ArrivalModel) -> ()) {
+    func createArrForPageArrival(times: DayTimePage,closure: @escaping (ArrivalModel) -> ()) {
         
         reqService.getAirportTable(times: times, typeAirline: .arrival) { result in
             

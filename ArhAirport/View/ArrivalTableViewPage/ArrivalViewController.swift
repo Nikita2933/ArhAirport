@@ -12,9 +12,9 @@ import SnapKit
 class ArrivalViewController: ButtonBarPagerTabStripViewController {
     
     let childVC: [UITableViewController] = {
-        let today = PageArrivalVC(itemInfo: "Вчера", color: .blue)
-        let yesterday = PageArrivalVC(itemInfo: "Сегодня", color: .brown)
-        let tommorow = PageArrivalVC(itemInfo: "Завтра", color: .cyan)
+        let yesterday = PageArrivalVC(Day: .yesterday, itemInfo: "Вчера", color: .blue, viewModel: PageArrivalModelView())
+        let today = PageArrivalVC(Day: .today, itemInfo: "Сегодня", color: .brown, viewModel: PageArrivalModelView())
+        let tommorow = PageArrivalVC(Day: .tomorrow, itemInfo: "Завтра", color: .cyan, viewModel: PageArrivalModelView())
         return [today, yesterday, tommorow]
     }()
     

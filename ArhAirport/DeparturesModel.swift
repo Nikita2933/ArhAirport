@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct NewParceClass: Codable {
-    let embedded: Embedded
+struct DeparturesModel: Codable {
+    let embedded: Departure
 
     enum CodingKeys: String, CodingKey {
         case embedded = "_embedded"
@@ -16,8 +16,8 @@ struct NewParceClass: Codable {
 }
 
 // MARK: - Embedded
-struct Embedded: Codable {
-    let items: [Item]
+struct Departure: Codable {
+    let items: [DepartureItem]
 
     enum CodingKeys: String, CodingKey {
         case items = "items"
@@ -25,7 +25,7 @@ struct Embedded: Codable {
 }
 
 // MARK: - Item
-struct Item: Codable {
+struct DepartureItem: Codable {
     let id: String
     let airportDeparture: String
     let airportArrival: String
@@ -41,7 +41,7 @@ struct Item: Codable {
     let sd2: String
     let arrivalTime: String
     let departureTime: String
-    let links: Links
+    let DepartureLinks: DepartureLinks
     //let embedded: [JSONAny]
 
     enum CodingKeys: String, CodingKey {
@@ -60,22 +60,22 @@ struct Item: Codable {
         case sd2 = "sd2"
         case arrivalTime = "st1"
         case departureTime = "st2"
-        case links = "_links"
+        case DepartureLinks = "_links"
         //case embedded = "_embedded"
     }
 }
 
 // MARK: - Links
-struct Links: Codable {
-    let linksSelf: SelfClass
+struct DepartureLinks: Codable {
+    let departureSelfClass: DepartureSelfClass
 
     enum CodingKeys: String, CodingKey {
-        case linksSelf = "self"
+        case departureSelfClass = "self"
     }
 }
 
 // MARK: - SelfClass
-struct SelfClass: Codable {
+struct DepartureSelfClass: Codable {
     let href: String
 
     enum CodingKeys: String, CodingKey {

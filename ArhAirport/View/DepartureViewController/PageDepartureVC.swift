@@ -17,9 +17,9 @@ class PageDepartureVC: UITableViewController, IndicatorInfoProvider {
     
     let itemInfo: IndicatorInfo
     
-    let viewModel = PageDepartureModelView()
+    private let viewModel: PageDepartureModelView
     
-    var arr: NewParceClass?
+    var arr: DeparturesModel?
     
     
     override func viewDidLoad() {
@@ -28,8 +28,9 @@ class PageDepartureVC: UITableViewController, IndicatorInfoProvider {
         setupTableView()
     }
     
-    init(Day: DayTimePage,itemInfo: IndicatorInfo, color: UIColor) {
+    init(Day: DayTimePage, itemInfo: IndicatorInfo, color: UIColor, viewModel: PageDepartureModelView) {
         self.Day = Day
+        self.viewModel = viewModel
         self.itemInfo = itemInfo
         super.init(style: .plain)
         view.backgroundColor = Constants.colorTabBar
@@ -74,13 +75,13 @@ class PageDepartureVC: UITableViewController, IndicatorInfoProvider {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return arr!.embedded.items.count
+        return arr?.embedded.items.count ?? 1
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Departure") as! DepartureCell
-        let data = arr!.embedded.items[indexPath.row]
+        let data = arr?.embedded.items[indexPath.row]
         cell.update(data: data)
         
         return cell

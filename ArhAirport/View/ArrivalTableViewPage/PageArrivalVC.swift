@@ -8,27 +8,40 @@
 import UIKit
 import XLPagerTabStrip
 import SnapKit
+import RxSwift
 
 class PageArrivalVC: UITableViewController, IndicatorInfoProvider {
-    var itemInfo: IndicatorInfo
     
-    let arr = ["1", "2", "3", "4", "5"]
+    let Day: DayTimePage
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+    let disposeBag = DisposeBag()
+    
+    let itemInfo: IndicatorInfo
+    
+    private let viewModel: PageArrivalModelView
+    
+    var arr: ArrivalModel?
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
-    }
     
-    init(itemInfo: IndicatorInfo, color: UIColor) {
+    init(Day: DayTimePage,itemInfo: IndicatorInfo, color: UIColor, viewModel: PageArrivalModelView) {
         self.itemInfo = itemInfo
+        self.Day = Day
+        self.viewModel = viewModel
         super.init(style: .plain)
         view.backgroundColor = Constants.colorTabBar
         self.tableView.backgroundColor = color
-        
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        requestData()
+    }
+    
+    func requestData()  {
+        viewModel.createArrForPageDeparture(times: Day, closure: { arrs in
+            self.arr = arrs
+            self.tableView.reloadData()
+        })
     }
     
     required init?(coder: NSCoder) {
@@ -44,12 +57,14 @@ class PageArrivalVC: UITableViewController, IndicatorInfoProvider {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return arr.count
+        return arr?.embedded.items.count ?? 1
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let defaultCell = UITableViewCell(style: .default, reuseIdentifier: "Cell")
-        defaultCell.textLabel?.text = arr[indexPath.row]
+        
+        let data = arr?.embedded.items[indexPath.row]
+        defaultCell.textLabel?.text = data?.airportDeparture ?? ""
         return defaultCell
     }
 

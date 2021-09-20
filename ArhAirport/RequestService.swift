@@ -13,9 +13,7 @@ import Alamofire
 
 class RequestService {
     
-    
-    
-    func getDeparture(times: DayTimePage,typeAirline: TypeTableAirline, arrClosure: @escaping (Result<NewParceClass,Error>) -> () )  {
+    func getAirportTable(times: DayTimePage,typeAirline: TypeTableAirline, closure: @escaping (Result<Data,APIServiceError>) -> () )  {
         
         let dateformatter = DateFormatter()
         dateformatter.dateFormat = "yyyy-MM-dd-"
@@ -47,18 +45,27 @@ class RequestService {
                    headers: headers,
                    interceptor: nil,
                    requestModifier: .none).responseString { result in
-                    if let data = result.data {
-                        do {
-                            let decodedData = try JSONDecoder().decode(NewParceClass.self, from: data)
-                            arrClosure(.success(decodedData))
-                        } catch  {
-                            print(error)
-                            arrClosure(.failure(error))
-                        }
+                    if result.error != nil {
+                        closure(.failure(.badGateway))
+                        return
+                    }
+                    
+                    guard let statusCode = (result.response as? HTTPURLResponse)?.statusCode, 200..<299 ~= statusCode else {
+                        closure(.failure(.invalidResponse))
+                        return
+                    }
+                    
+                    guard let data = result.data else {
+                        closure(.failure(.noData))
+                        return
+                    }
+                    
+                    closure(.success(data))
+                    
             }
         }
     }
-}
+
 
 
 

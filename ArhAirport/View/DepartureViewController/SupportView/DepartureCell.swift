@@ -43,15 +43,18 @@ class DepartureCell: UITableViewCell {
         setConstraint()
     }
     
-    func update(data: Item) {
-        departureLabel.text = data.arrivalTime
-        aviaCompanyLabel.text = data.company
-        reisNameLabel.text = data.flight
-        flyDirectionLabel.text = data.airportArrival
-        
-        statusLabel.text = data.remark
-        statusLabel.text?.removeLast(2)
+    func update(data: DepartureItem?) {
+        if let data = data {
+            departureLabel.text = data.arrivalTime
+            aviaCompanyLabel.text = data.company
+            reisNameLabel.text = data.flight
+            flyDirectionLabel.text = data.airportArrival
             
+            statusLabel.text = data.remark
+            statusLabel.text?.removeLast(2)
+        } else {
+            departureLabel.text = "Нет данных"
+        }
     }
     
     func addView() {

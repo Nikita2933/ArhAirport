@@ -13,9 +13,9 @@ class DepartureViewController: ButtonBarPagerTabStripViewController {
     let viewModel = DepartureModelView()
     
     let childVC: [UITableViewController] = {
-        let yesterday = PageDepartureVC(Day: .yesterday, itemInfo: "Вчера", color: .blue)
-        let today = PageDepartureVC(Day: .today, itemInfo: "Сегодня", color: .brown)
-        let tommorow = PageDepartureVC(Day: .tomorrow, itemInfo: "Завтра", color: .cyan)
+        let yesterday = PageDepartureVC(Day: .yesterday, itemInfo: "Вчера", color: .blue, viewModel: PageDepartureModelView())
+        let today = PageDepartureVC(Day: .today, itemInfo: "Сегодня", color: .brown, viewModel: PageDepartureModelView())
+        let tommorow = PageDepartureVC(Day: .tomorrow, itemInfo: "Завтра", color: .cyan, viewModel: PageDepartureModelView())
         return  [yesterday, today, tommorow]
     }()
     

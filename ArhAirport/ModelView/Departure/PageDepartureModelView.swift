@@ -16,18 +16,11 @@ class PageDepartureModelView {
         reqService.getAirportTable(times: times, typeAirline: .departure) { result in
             
             switch result {
-            case .success(let data):
-                do {
-                    let decodedData = try JSONDecoder().decode(DeparturesModel.self, from: data)
-                    closure(decodedData)
-                } catch  {
-                    print(error) //MARK: Вывести алерт с ошибкой
-                }
-            case .failure(let error):
-                print(error)
-                break //MARK: Вывести алерт с ошибкой
+            case .failure(let error ):
+                print(error) //вывести алерт с ошибкой
+            case .success(let arrivalModel):
+                closure(arrivalModel as! DeparturesModel)
             }
         }
-        
     }
 }

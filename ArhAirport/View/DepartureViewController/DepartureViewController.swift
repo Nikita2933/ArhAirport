@@ -10,12 +10,12 @@ import XLPagerTabStrip
 
 class DepartureViewController: ButtonBarPagerTabStripViewController {
     
-    let viewModel = DepartureModelView()
+    private var viewModel : DepartureModelView!
     
     let childVC: [UITableViewController] = {
-        let yesterday = PageDepartureVC(Day: .yesterday, itemInfo: "Вчера", color: .blue, viewModel: PageDepartureModelView())
-        let today = PageDepartureVC(Day: .today, itemInfo: "Сегодня", color: .brown, viewModel: PageDepartureModelView())
-        let tommorow = PageDepartureVC(Day: .tomorrow, itemInfo: "Завтра", color: .cyan, viewModel: PageDepartureModelView())
+        let yesterday = PageDepartureVC(Day: .yesterday, itemInfo: "Вчера", color: .blue)
+        let today = PageDepartureVC(Day: .today, itemInfo: "Сегодня", color: .brown)
+        let tommorow = PageDepartureVC(Day: .tomorrow, itemInfo: "Завтра", color: .cyan)
         return  [yesterday, today, tommorow]
     }()
     
@@ -23,6 +23,7 @@ class DepartureViewController: ButtonBarPagerTabStripViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setConstraint()
+        viewModel = DepartureModelView()
         self.containerView.contentInsetAdjustmentBehavior = .never
         buttonBarView.backgroundColor = Constants.colorTabBar
         settings.style.buttonBarBackgroundColor = Constants.colorTabBar
@@ -31,8 +32,7 @@ class DepartureViewController: ButtonBarPagerTabStripViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        self.moveToViewController(at: 1, animated: false)
-        reloadPagerTabStripView()
+
     }
     
     init() {
@@ -46,6 +46,7 @@ class DepartureViewController: ButtonBarPagerTabStripViewController {
     
     func setConstraint() {
         let safeArea = view.safeAreaLayoutGuide
+        
         buttonBarView.snp.makeConstraints { make in
             make.top.equalTo(safeArea.snp.top)
             make.leading.equalTo(safeArea.snp.leading)

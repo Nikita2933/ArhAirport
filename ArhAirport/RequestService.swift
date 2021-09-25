@@ -12,12 +12,12 @@ import Alamofire
 
 class RequestService {
     
-    func getAirportTable(times: DayTimePage,typeAirline: TypeTableAirline, closure: @escaping (Result<Data,APIServiceError>) -> () )  {
+    func getAirportTable(times: DayTimePage, typeAirline: TypeTableAirline, closure: @escaping (Result<Codable,APIServiceError>) -> () )  {
         
         let dateformatter = DateFormatter()
         dateformatter.dateFormat = "yyyy-MM-dd-"
         var timeDay = Date()
-       
+        
         switch times {
         case .today:
             break
@@ -28,10 +28,11 @@ class RequestService {
         }
         
         let date = dateformatter.string(from: timeDay)
-
+        
         let Url = String(format: "https://arh.aero/api/flights/online")
         let parameterDictionary = ["date" : "\(date)",
-                                   "type" : typeAirline.rawValue]
+                                   "type" : typeAirline.rawValue,
+                                   "fully_sorted" : "1"]
         let headers: HTTPHeaders = [
             .accept("text/html; charset=utf-8")
         ]
@@ -58,11 +59,25 @@ class RequestService {
                         return
                     }
                     
-                    closure(.success(data))
-                    
-            }
-        }
+                    switch typeAirline {
+                    case .arrival:
+                        do {
+                            let decodedData = try JSONDecoder().decode(ArrivalModel.self, from: data)
+                            closure(.success(decodedData))
+                        } catch  {
+                            closure(.failure(.decodeError)) //MARK: Вывести алерт с ошибкой
+                        }
+                    case .departure:
+                        do {
+                            let decodedData = try JSONDecoder().decode(DeparturesModel.self, from: data)
+                            closure(.success(decodedData))
+                        } catch  {
+                            closure(.failure(.decodeError))  //MARK: Вывести алерт с ошибкой
+                        }
+                    }
+                   }
     }
+}
 
 
 

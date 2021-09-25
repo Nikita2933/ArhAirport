@@ -23,10 +23,10 @@ class PageArrivalVC: UITableViewController, IndicatorInfoProvider {
     var arr: ArrivalModel?
 
     
-    init(Day: DayTimePage,itemInfo: IndicatorInfo, color: UIColor, viewModel: PageArrivalModelView) {
+    init(Day: DayTimePage,itemInfo: IndicatorInfo, color: UIColor) {
         self.itemInfo = itemInfo
         self.Day = Day
-        self.viewModel = viewModel
+        self.viewModel = PageArrivalModelView()
         super.init(style: .plain)
         view.backgroundColor = Constants.colorTabBar
         self.tableView.backgroundColor = color

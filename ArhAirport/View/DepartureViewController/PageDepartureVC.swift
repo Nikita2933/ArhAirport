@@ -17,7 +17,7 @@ class PageDepartureVC: UITableViewController, IndicatorInfoProvider {
     
     let itemInfo: IndicatorInfo
     
-    private let viewModel: PageDepartureModelView
+    private let viewModel: PageDepartureModelView!
     
     var arr: DeparturesModel?
     
@@ -28,14 +28,13 @@ class PageDepartureVC: UITableViewController, IndicatorInfoProvider {
         setupTableView()
     }
     
-    init(Day: DayTimePage, itemInfo: IndicatorInfo, color: UIColor, viewModel: PageDepartureModelView) {
+    init(Day: DayTimePage, itemInfo: IndicatorInfo, color: UIColor) {
         self.Day = Day
-        self.viewModel = viewModel
+        self.viewModel = PageDepartureModelView()
         self.itemInfo = itemInfo
         super.init(style: .plain)
         view.backgroundColor = Constants.colorTabBar
         self.tableView.backgroundColor = color
-        
     }
     
     required init?(coder: NSCoder) {

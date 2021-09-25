@@ -11,16 +11,19 @@ import SnapKit
 
 class ArrivalViewController: ButtonBarPagerTabStripViewController {
     
+    private var viewModel : ArrivalModelView!
+    
     let childVC: [UITableViewController] = {
-        let yesterday = PageArrivalVC(Day: .yesterday, itemInfo: "Вчера", color: .blue, viewModel: PageArrivalModelView())
-        let today = PageArrivalVC(Day: .today, itemInfo: "Сегодня", color: .brown, viewModel: PageArrivalModelView())
-        let tommorow = PageArrivalVC(Day: .tomorrow, itemInfo: "Завтра", color: .cyan, viewModel: PageArrivalModelView())
+        let yesterday = PageArrivalVC(Day: .yesterday, itemInfo: "Вчера", color: .blue)
+        let today = PageArrivalVC(Day: .today, itemInfo: "Сегодня", color: .brown)
+        let tommorow = PageArrivalVC(Day: .tomorrow, itemInfo: "Завтра", color: .cyan)
         return [ yesterday, today, tommorow]
     }()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel = ArrivalModelView()
         setConstraint()
         self.containerView.contentInsetAdjustmentBehavior = .never
         buttonBarView.backgroundColor = Constants.colorTabBar
@@ -39,11 +42,6 @@ class ArrivalViewController: ButtonBarPagerTabStripViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        self.moveToViewController(at: 1, animated: false)
-
-        reloadPagerTabStripView()
-    }
 
     
     func setConstraint() {

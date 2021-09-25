@@ -13,7 +13,6 @@
 		11D9A69F26F8F8D100EE4C9E /* ArrivalModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D9A69E26F8F8D100EE4C9E /* ArrivalModelView.swift */; };
 		11D9A6A126F8F9BD00EE4C9E /* ArrivalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D9A6A026F8F9BD00EE4C9E /* ArrivalModel.swift */; };
 		11D9A6A326F8FD1200EE4C9E /* ErrorHadler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D9A6A226F8FD1200EE4C9E /* ErrorHadler.swift */; };
-		1BE2C9B673363C64278D9917 /* Pods_ArhAirport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C0D0AFE6A1BBBDD103423FC /* Pods_ArhAirport.framework */; };
 		A83BEACF26A55C5A00BE2890 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83BEACE26A55C5A00BE2890 /* TabBarViewController.swift */; };
 		A83BEAD226A55D3400BE2890 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83BEAD126A55D3400BE2890 /* ContactViewController.swift */; };
 		A83BEAD426A55D8100BE2890 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83BEAD326A55D8100BE2890 /* WeatherViewController.swift */; };
@@ -41,8 +40,6 @@
 		11D9A69E26F8F8D100EE4C9E /* ArrivalModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalModelView.swift; sourceTree = "<group>"; };
 		11D9A6A026F8F9BD00EE4C9E /* ArrivalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalModel.swift; sourceTree = "<group>"; };
 		11D9A6A226F8FD1200EE4C9E /* ErrorHadler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHadler.swift; sourceTree = "<group>"; };
-		3B34EEB09C4F5B89DF71A3B0 /* Pods-ArhAirport.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArhAirport.release.xcconfig"; path = "Target Support Files/Pods-ArhAirport/Pods-ArhAirport.release.xcconfig"; sourceTree = "<group>"; };
-		5C0D0AFE6A1BBBDD103423FC /* Pods_ArhAirport.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArhAirport.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A83BEACE26A55C5A00BE2890 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		A83BEAD126A55D3400BE2890 /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		A83BEAD326A55D8100BE2890 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
@@ -63,7 +60,6 @@
 		A8E9142C26C415D0003CA804 /* PageDepartureModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageDepartureModelView.swift; sourceTree = "<group>"; };
 		A8E9143126C55097003CA804 /* DepartureViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartureViewCell.swift; sourceTree = "<group>"; };
 		A8F2361326A6B3E50022A750 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
-		B9985311722FDF59AF7F3EB9 /* Pods-ArhAirport.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArhAirport.debug.xcconfig"; path = "Target Support Files/Pods-ArhAirport/Pods-ArhAirport.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +67,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1BE2C9B673363C64278D9917 /* Pods_ArhAirport.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,8 +172,6 @@
 			children = (
 				A8654A0126A18A86003B67A9 /* ArhAirport */,
 				A8654A0026A18A86003B67A9 /* Products */,
-				C051199A685C357CB1D1827E /* Pods */,
-				E09E1BCFB4B6D0BD07D01DB9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -214,23 +207,6 @@
 				A8E9143126C55097003CA804 /* DepartureViewCell.swift */,
 			);
 			path = SupportView;
-			sourceTree = "<group>";
-		};
-		C051199A685C357CB1D1827E /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				B9985311722FDF59AF7F3EB9 /* Pods-ArhAirport.debug.xcconfig */,
-				3B34EEB09C4F5B89DF71A3B0 /* Pods-ArhAirport.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
-		E09E1BCFB4B6D0BD07D01DB9 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				5C0D0AFE6A1BBBDD103423FC /* Pods_ArhAirport.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -503,7 +479,6 @@
 		};
 		A8654A1426A18A88003B67A9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B9985311722FDF59AF7F3EB9 /* Pods-ArhAirport.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -523,7 +498,6 @@
 		};
 		A8654A1526A18A88003B67A9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3B34EEB09C4F5B89DF71A3B0 /* Pods-ArhAirport.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

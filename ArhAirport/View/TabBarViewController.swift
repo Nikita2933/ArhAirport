@@ -39,6 +39,7 @@ class TabBarViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = Constants.colorTabBar
         self.setViewControllers(ArrViewController, animated: true)
         self.navigationItem.title = self.ArrViewController.first?.title
         self.navigationItem.rightBarButtonItem = settingsBar

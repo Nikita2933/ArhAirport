@@ -6,15 +6,17 @@
 //
 
 import UIKit
-import RxSwift
+
 import RxCocoa
+import RxSwift
+
 class TabBarViewController: UITabBarController {
 
     
     var ArrViewController: [UIViewController] = {
         var arr: [UIViewController] = []
-        arr.append(ArrivalViewController())
-        arr.append(DepartureViewController())
+//        arr.append(ArrivalViewController())
+//        arr.append(DepartureViewController())
         arr.append(WeatherViewController())
         arr.append(ContactViewController())
         return arr

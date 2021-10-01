@@ -8,8 +8,6 @@
 import Foundation
 import Alamofire
 
-
-
 class RequestService {
     
     func getAirportTable(times: DayTimePage, typeAirline: TypeTableAirline, closure: @escaping (Result<Codable,APIServiceError>) -> () )  {

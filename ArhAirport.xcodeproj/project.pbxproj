@@ -3,11 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		1109614226F91FDD00C78F9F /* ArrivalViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1109614126F91FDD00C78F9F /* ArrivalViewCell.swift */; };
+		116661FF2707A43200EA09DB /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 116661FE2707A43200EA09DB /* Alamofire */; };
+		116662022707A67000EA09DB /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 116662012707A67000EA09DB /* RxSwift */; };
+		116662042707A69E00EA09DB /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 116662032707A69E00EA09DB /* SnapKit */; };
+		116662062707A6B700EA09DB /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 116662052707A6B700EA09DB /* RealmSwift */; };
+		116662082707A6D700EA09DB /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 116662072707A6D700EA09DB /* RxCocoa */; };
 		11809BD626F61724007FC1E3 /* DeparturesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11809BD526F61724007FC1E3 /* DeparturesModel.swift */; };
 		11D9A69D26F8F8BB00EE4C9E /* PageArrivalModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D9A69C26F8F8BB00EE4C9E /* PageArrivalModelView.swift */; };
 		11D9A69F26F8F8D100EE4C9E /* ArrivalModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D9A69E26F8F8D100EE4C9E /* ArrivalModelView.swift */; };
@@ -67,6 +72,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				116662062707A6B700EA09DB /* RealmSwift in Frameworks */,
+				116662042707A69E00EA09DB /* SnapKit in Frameworks */,
+				116662082707A6D700EA09DB /* RxCocoa in Frameworks */,
+				116662022707A67000EA09DB /* RxSwift in Frameworks */,
+				116661FF2707A43200EA09DB /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +123,13 @@
 				1109614126F91FDD00C78F9F /* ArrivalViewCell.swift */,
 			);
 			path = SupportView;
+			sourceTree = "<group>";
+		};
+		116662002707A67000EA09DB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		A83BEAD026A55CEB00BE2890 /* View */ = {
@@ -172,6 +189,7 @@
 			children = (
 				A8654A0126A18A86003B67A9 /* ArhAirport */,
 				A8654A0026A18A86003B67A9 /* Products */,
+				116662002707A67000EA09DB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -216,17 +234,22 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A8654A1326A18A88003B67A9 /* Build configuration list for PBXNativeTarget "ArhAirport" */;
 			buildPhases = (
-				C2E032FEACCB622AE39F772D /* [CP] Check Pods Manifest.lock */,
 				A86549FB26A18A86003B67A9 /* Sources */,
 				A86549FC26A18A86003B67A9 /* Frameworks */,
 				A86549FD26A18A86003B67A9 /* Resources */,
-				D0570EED7A51472F55326C34 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = ArhAirport;
+			packageProductDependencies = (
+				116661FE2707A43200EA09DB /* Alamofire */,
+				116662012707A67000EA09DB /* RxSwift */,
+				116662032707A69E00EA09DB /* SnapKit */,
+				116662052707A6B700EA09DB /* RealmSwift */,
+				116662072707A6D700EA09DB /* RxCocoa */,
+			);
 			productName = ArhAirport;
 			productReference = A86549FF26A18A86003B67A9 /* ArhAirport.app */;
 			productType = "com.apple.product-type.application";
@@ -254,6 +277,12 @@
 				Base,
 			);
 			mainGroup = A86549F626A18A86003B67A9;
+			packageReferences = (
+				116660A427079CF400EA09DB /* XCRemoteSwiftPackageReference "RxSwift" */,
+				116660A527079D3300EA09DB /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+				116660A627079D4900EA09DB /* XCRemoteSwiftPackageReference "SnapKit" */,
+				116661FD2707A43200EA09DB /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = A8654A0026A18A86003B67A9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -274,48 +303,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		C2E032FEACCB622AE39F772D /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ArhAirport-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D0570EED7A51472F55326C34 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ArhAirport/Pods-ArhAirport-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ArhAirport/Pods-ArhAirport-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ArhAirport/Pods-ArhAirport-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A86549FB26A18A86003B67A9 /* Sources */ = {
@@ -483,7 +470,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SG9C53KBMD;
+				DEVELOPMENT_TEAM = RPG7899N34;
 				INFOPLIST_FILE = ArhAirport/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -502,7 +489,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SG9C53KBMD;
+				DEVELOPMENT_TEAM = RPG7899N34;
 				INFOPLIST_FILE = ArhAirport/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -537,6 +524,69 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		116660A427079CF400EA09DB /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		116660A527079D3300EA09DB /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		116660A627079D4900EA09DB /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = exactVersion;
+				version = 5.0.1;
+			};
+		};
+		116661FD2707A43200EA09DB /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		116661FE2707A43200EA09DB /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 116661FD2707A43200EA09DB /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		116662012707A67000EA09DB /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 116660A427079CF400EA09DB /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		116662032707A69E00EA09DB /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 116660A627079D4900EA09DB /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		116662052707A6B700EA09DB /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 116660A527079D3300EA09DB /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
+		};
+		116662072707A6D700EA09DB /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 116660A427079CF400EA09DB /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A86549F726A18A86003B67A9 /* Project object */;
 }

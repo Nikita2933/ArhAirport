@@ -16,11 +16,13 @@ class TabBarViewController: UITabBarController {
     var ArrViewController: [UIViewController] = {
         var arr: [UIViewController] = []
 //        arr.append(ArrivalViewController())
-//        arr.append(DepartureViewController())
+        arr.append(DepartureViewController())
         arr.append(WeatherViewController())
         arr.append(ContactViewController())
         return arr
     }()
+    
+
     
     let settingsBar: UIBarButtonItem = {
         let button = UIBarButtonItem(title: "Настройки", style: .done, target: nil, action: nil)
@@ -37,15 +39,26 @@ class TabBarViewController: UITabBarController {
         return menu
     }()
     
-    
-    
+
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         self.view.backgroundColor = Constants.colorTabBar
         self.setViewControllers(ArrViewController, animated: true)
+        setupView()
+        setupConstraint()
+    }
+    private func setupNavigator() {
         self.navigationItem.title = self.ArrViewController.first?.title
         self.navigationItem.rightBarButtonItem = settingsBar
         self.navigationItem.rightBarButtonItem?.menu = barButtonMenu
+    }
+    
+    private func setupView(){
+
+    }
+    
+    private func setupConstraint(){
     }
     
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {

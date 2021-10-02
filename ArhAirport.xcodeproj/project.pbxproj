@@ -18,6 +18,7 @@
 		11D9A69F26F8F8D100EE4C9E /* ArrivalModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D9A69E26F8F8D100EE4C9E /* ArrivalModelView.swift */; };
 		11D9A6A126F8F9BD00EE4C9E /* ArrivalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D9A6A026F8F9BD00EE4C9E /* ArrivalModel.swift */; };
 		11D9A6A326F8FD1200EE4C9E /* ErrorHadler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D9A6A226F8FD1200EE4C9E /* ErrorHadler.swift */; };
+		11FF79CA27082D560086B58E /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FF79C927082D560086B58E /* MenuBar.swift */; };
 		A83BEACF26A55C5A00BE2890 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83BEACE26A55C5A00BE2890 /* TabBarViewController.swift */; };
 		A83BEAD226A55D3400BE2890 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83BEAD126A55D3400BE2890 /* ContactViewController.swift */; };
 		A83BEAD426A55D8100BE2890 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83BEAD326A55D8100BE2890 /* WeatherViewController.swift */; };
@@ -45,6 +46,7 @@
 		11D9A69E26F8F8D100EE4C9E /* ArrivalModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalModelView.swift; sourceTree = "<group>"; };
 		11D9A6A026F8F9BD00EE4C9E /* ArrivalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalModel.swift; sourceTree = "<group>"; };
 		11D9A6A226F8FD1200EE4C9E /* ErrorHadler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHadler.swift; sourceTree = "<group>"; };
+		11FF79C927082D560086B58E /* MenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBar.swift; sourceTree = "<group>"; };
 		A83BEACE26A55C5A00BE2890 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		A83BEAD126A55D3400BE2890 /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		A83BEAD326A55D8100BE2890 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				A83BEACE26A55C5A00BE2890 /* TabBarViewController.swift */,
+				11FF79C927082D560086B58E /* MenuBar.swift */,
 				A83BEAE226A5800300BE2890 /* NavigationController.swift */,
 				1109614026F91E9200C78F9F /* Weather */,
 				1109613F26F91E7E00C78F9F /* Contact */,
@@ -326,6 +329,7 @@
 				A83BEAEA26A5B91600BE2890 /* PageDepartureVC.swift in Sources */,
 				A8654A0526A18A86003B67A9 /* SceneDelegate.swift in Sources */,
 				11D9A6A126F8F9BD00EE4C9E /* ArrivalModel.swift in Sources */,
+				11FF79CA27082D560086B58E /* MenuBar.swift in Sources */,
 				11809BD626F61724007FC1E3 /* DeparturesModel.swift in Sources */,
 				11D9A6A326F8FD1200EE4C9E /* ErrorHadler.swift in Sources */,
 				A83BEAE326A5800300BE2890 /* NavigationController.swift in Sources */,

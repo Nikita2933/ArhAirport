@@ -9,42 +9,61 @@ import UIKit
 import SnapKit
 import RxSwift
 
-class PageDepartureVC: UITableViewController {
+class PageDepartureCollectionCell: UICollectionViewCell {
     
-    let Day: DayTimePage
     let disposeBag = DisposeBag()
     
+    let tableView: UITableView = {
+        let table = UITableView()
+        return table
+    }()
+    
+    var day: DayTimePage!
     
     private let viewModel: PageDepartureModelView!
     
     var arr: DeparturesModel?
     
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        requestData()
+    override init(frame: CGRect) {
+        self.viewModel = PageDepartureModelView()
+        super.init(frame: frame)
+        setupView()
+        setupConstraint()
         setupTableView()
     }
     
-    init(Day: DayTimePage, color: UIColor) {
-        self.Day = Day
-        self.viewModel = PageDepartureModelView()
-        super.init(style: .plain)
-        view.backgroundColor = Constants.colorTabBar
-        self.tableView.backgroundColor = color
+    func update(day: DayTimePage) {
+        self.day = day
+        requestData()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    private func setupView() {
+        addSubview(tableView)
+    }
+    private func setupConstraint() {
+        let safeArea = safeAreaLayoutGuide
+        
+        tableView.snp.makeConstraints { make in
+            make.top.equalTo(safeArea.snp.top)
+            make.bottom.leading.trailing.equalTo(safeArea)
+        }
+    }
+    
     func requestData()  {
-        viewModel.createArrForPageDeparture(times: Day, closure: { arrs in
+        viewModel.createArrForPageDeparture(times: day, closure: { arrs in
             self.arr = arrs
+            self.tableView.reloadData()
         })
     }
     
     func setupTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
         let control = UIRefreshControl()
         control.rx.controlEvent(.valueChanged).subscribe({ [weak self] _ in
             self?.requestData()
@@ -58,33 +77,34 @@ class PageDepartureVC: UITableViewController {
         
         tableView.estimatedRowHeight = 40.0
         tableView.rowHeight = UITableView.automaticDimension
+       
         tableView.register(DepartureViewCell.self, forCellReuseIdentifier: "Departure")
     }
     
-    
-    // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
+}
+
+extension PageDepartureCollectionCell: UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return arr?.embedded.items.count ?? 1
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return  arr?.embedded.items.count ?? 1
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
         let cell = tableView.dequeueReusableCell(withIdentifier: "Departure") as! DepartureViewCell
         let data = arr?.embedded.items[indexPath.row]
         cell.update(data: data)
         
         return cell
     }
-    
-    
-
 }
 
+extension PageDepartureCollectionCell: UITableViewDelegate {
+    
+}
 

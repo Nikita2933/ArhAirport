@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 struct Constants {
-    static let colorTabBar = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
+    static let colorTabBar = #colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)
 }
 
 public enum TypeTableAirline: String {

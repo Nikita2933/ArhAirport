@@ -41,24 +41,16 @@ class TabBarViewController: UITabBarController {
     
 
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         self.view.backgroundColor = Constants.colorTabBar
         self.setViewControllers(ArrViewController, animated: true)
-        setupView()
-        setupConstraint()
+        setupNavigator()
     }
     private func setupNavigator() {
         self.navigationItem.title = self.ArrViewController.first?.title
         self.navigationItem.rightBarButtonItem = settingsBar
         self.navigationItem.rightBarButtonItem?.menu = barButtonMenu
-    }
-    
-    private func setupView(){
-
-    }
-    
-    private func setupConstraint(){
+        self.navigationItem.hidesSearchBarWhenScrolling = true
     }
     
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {

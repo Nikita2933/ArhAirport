@@ -6,10 +6,11 @@
 //
 
 import Foundation
-
+import RealmSwift
 class PageDepartureModelView {
     
     let reqService = RequestService()
+    let realm = try! Realm()
     
     func createArrForPageDeparture(times: DayTimePage, closure: @escaping (DeparturesModel) -> ()) {
         

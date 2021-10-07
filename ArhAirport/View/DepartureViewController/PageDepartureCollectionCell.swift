@@ -4,7 +4,6 @@
 //
 //  Created by Никита Иванов on 19.07.2021.
 //
-
 import UIKit
 import SnapKit
 import RxSwift
@@ -107,4 +106,3 @@ extension PageDepartureCollectionCell: UITableViewDataSource {
 extension PageDepartureCollectionCell: UITableViewDelegate {
     
 }
-

@@ -9,6 +9,10 @@ import Foundation
 import RealmSwift
 
 class DepartureData: Object {
+    let data = List<DepartureDataList>()
+}
+
+class DepartureDataList: Object {
     @objc dynamic var id = 0
     @objc dynamic var airportDeparture = ""
     @objc dynamic var airportArrival = ""
@@ -20,7 +24,7 @@ class DepartureData: Object {
     @objc dynamic var ad2: String? = nil
     @objc dynamic var at1: String? = nil
     @objc dynamic var at2: String? = nil
-    @objc dynamic var sd1
+    @objc dynamic var sd1: String? = nil
     @objc dynamic var sd2 = ""
     @objc dynamic var arrivalTime = ""
     @objc dynamic var departureTime = ""

@@ -1,14 +1,15 @@
 //
-//  PageDepartureViewController.swift
+//  PageArrivalCollectionCell.swift
 //  ArhAirport
 //
 //  Created by Никита Иванов on 19.07.2021.
 //
+
 import UIKit
 import SnapKit
 import RxSwift
 
-class PageDepartureCollectionCell: UICollectionViewCell {
+class PageArrivalCollectionCell: UICollectionViewCell {
     
     let disposeBag = DisposeBag()
     
@@ -19,13 +20,13 @@ class PageDepartureCollectionCell: UICollectionViewCell {
     
     var day: DayTimePage!
     
-    private let viewModel: PageDepartureModelView!
+    private let viewModel: PageArrivalModelView!
     
-    var arr: DepartureData?
+    var arr: ArrivalData?
     
     
     override init(frame: CGRect) {
-        self.viewModel = PageDepartureModelView()
+        self.viewModel = PageArrivalModelView()
         super.init(frame: frame)
         setupView()
         setupConstraint()
@@ -77,13 +78,13 @@ class PageDepartureCollectionCell: UICollectionViewCell {
         tableView.estimatedRowHeight = 40.0
         tableView.rowHeight = UITableView.automaticDimension
        
-        tableView.register(DepartureViewCell.self, forCellReuseIdentifier: "Departure")
+        tableView.register(ArrivalViewCell.self, forCellReuseIdentifier: "Arrival")
     }
     
 
 }
 
-extension PageDepartureCollectionCell: UITableViewDataSource {
+extension PageArrivalCollectionCell: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -95,7 +96,7 @@ extension PageDepartureCollectionCell: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Departure") as! DepartureViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Arrival") as! ArrivalViewCell
         let data = arr?.data[indexPath.row]
         cell.update(data: data)
         
@@ -103,6 +104,6 @@ extension PageDepartureCollectionCell: UITableViewDataSource {
     }
 }
 
-extension PageDepartureCollectionCell: UITableViewDelegate {
+extension PageArrivalCollectionCell: UITableViewDelegate {
     
 }

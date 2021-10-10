@@ -8,7 +8,7 @@
 import UIKit
 
 
-class DepartureViewController: UIViewController, MenuBarDelegate {
+class DepartureViewController: UIViewController {
 
     var selectedItem: IndexPath?
     
@@ -81,13 +81,7 @@ class DepartureViewController: UIViewController, MenuBarDelegate {
         menuBar.collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .top)
     }
 
-    
-    func scroolToMenuIndex(menuItem: Int ) {
-        let indexPath = IndexPath(item: menuItem, section: 0)
-        collectionView.isPagingEnabled = false
-        collectionView.scrollToItem(at: indexPath, at: [.centeredVertically, .centeredHorizontally] , animated: true)
-        collectionView.isPagingEnabled = true
-    }
+   
     
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -99,6 +93,16 @@ class DepartureViewController: UIViewController, MenuBarDelegate {
     }
     
 }
+
+extension DepartureViewController: MenuBarDelegate {
+    
+    func scroolToMenuIndex(menuItem: Int ) {
+        let indexPath = IndexPath(item: menuItem, section: 0)
+        collectionView.isPagingEnabled = false
+        collectionView.scrollToItem(at: indexPath, at: [.centeredVertically, .centeredHorizontally] , animated: true)
+        collectionView.isPagingEnabled = true
+    }
+}
 extension DepartureViewController: UICollectionViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -106,6 +110,7 @@ extension DepartureViewController: UICollectionViewDelegate {
     }
     
 }
+
 extension DepartureViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

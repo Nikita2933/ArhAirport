@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1109614226F91FDD00C78F9F /* ArrivalViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1109614126F91FDD00C78F9F /* ArrivalViewCell.swift */; };
+		115EC8142712DC6600EE446B /* Extension + Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115EC8132712DC6600EE446B /* Extension + Realm.swift */; };
 		116661FF2707A43200EA09DB /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 116661FE2707A43200EA09DB /* Alamofire */; };
 		116662022707A67000EA09DB /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 116662012707A67000EA09DB /* RxSwift */; };
 		116662042707A69E00EA09DB /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 116662032707A69E00EA09DB /* SnapKit */; };
@@ -27,7 +28,7 @@
 		A83BEAD426A55D8100BE2890 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83BEAD326A55D8100BE2890 /* WeatherViewController.swift */; };
 		A83BEAD626A55D8F00BE2890 /* ArrivalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83BEAD526A55D8F00BE2890 /* ArrivalViewController.swift */; };
 		A83BEAD826A55DAE00BE2890 /* DepartureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83BEAD726A55DAE00BE2890 /* DepartureViewController.swift */; };
-		A83BEADB26A5625100BE2890 /* PageArrivalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83BEADA26A5625100BE2890 /* PageArrivalVC.swift */; };
+		A83BEADB26A5625100BE2890 /* PageArrivalCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83BEADA26A5625100BE2890 /* PageArrivalCollectionCell.swift */; };
 		A83BEAE326A5800300BE2890 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83BEAE226A5800300BE2890 /* NavigationController.swift */; };
 		A83BEAE526A5803A00BE2890 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83BEAE426A5803A00BE2890 /* Constants.swift */; };
 		A83BEAEA26A5B91600BE2890 /* PageDepartureCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83BEAE926A5B91600BE2890 /* PageDepartureCollectionCell.swift */; };
@@ -45,6 +46,7 @@
 
 /* Begin PBXFileReference section */
 		1109614126F91FDD00C78F9F /* ArrivalViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalViewCell.swift; sourceTree = "<group>"; };
+		115EC8132712DC6600EE446B /* Extension + Realm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + Realm.swift"; sourceTree = "<group>"; };
 		117BD40A270F5F45009C7271 /* DataBaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseService.swift; sourceTree = "<group>"; };
 		117BD40F270F6015009C7271 /* DepartureDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartureDB.swift; sourceTree = "<group>"; };
 		117BD411270F601F009C7271 /* ArrivalDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalDB.swift; sourceTree = "<group>"; };
@@ -59,7 +61,7 @@
 		A83BEAD326A55D8100BE2890 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		A83BEAD526A55D8F00BE2890 /* ArrivalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalViewController.swift; sourceTree = "<group>"; };
 		A83BEAD726A55DAE00BE2890 /* DepartureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartureViewController.swift; sourceTree = "<group>"; };
-		A83BEADA26A5625100BE2890 /* PageArrivalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageArrivalVC.swift; sourceTree = "<group>"; };
+		A83BEADA26A5625100BE2890 /* PageArrivalCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageArrivalCollectionCell.swift; sourceTree = "<group>"; };
 		A83BEAE226A5800300BE2890 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		A83BEAE426A5803A00BE2890 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A83BEAE926A5B91600BE2890 /* PageDepartureCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageDepartureCollectionCell.swift; sourceTree = "<group>"; };
@@ -135,6 +137,18 @@
 			path = SupportView;
 			sourceTree = "<group>";
 		};
+		115EC8122712DC4800EE446B /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				117BD40D270F5FD8009C7271 /* Service */,
+				A8F2361326A6B3E50022A750 /* Alert.swift */,
+				115EC8132712DC6600EE446B /* Extension + Realm.swift */,
+				11D9A6A226F8FD1200EE4C9E /* ErrorHadler.swift */,
+				A83BEAE426A5803A00BE2890 /* Constants.swift */,
+			);
+			name = Support;
+			sourceTree = "<group>";
+		};
 		116662002707A67000EA09DB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,7 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				A83BEAD526A55D8F00BE2890 /* ArrivalViewController.swift */,
-				A83BEADA26A5625100BE2890 /* PageArrivalVC.swift */,
+				A83BEADA26A5625100BE2890 /* PageArrivalCollectionCell.swift */,
 				1109614326F91FE000C78F9F /* SupportView */,
 			);
 			path = ArrivalTableViewPage;
@@ -197,12 +211,8 @@
 		A83BEAE626A5827000BE2890 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A83BEAE426A5803A00BE2890 /* Constants.swift */,
-				11D9A6A226F8FD1200EE4C9E /* ErrorHadler.swift */,
-				A8F2361326A6B3E50022A750 /* Alert.swift */,
 				117BD40C270F5F6B009C7271 /* RequestModel */,
 				117BD40E270F5FF9009C7271 /* DataModel */,
-				117BD40D270F5FD8009C7271 /* Service */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -248,6 +258,7 @@
 			children = (
 				A8654A0226A18A86003B67A9 /* AppDelegate.swift */,
 				A8654A0426A18A86003B67A9 /* SceneDelegate.swift */,
+				115EC8122712DC4800EE446B /* Support */,
 				A83BEAE826A5AEBE00BE2890 /* ModelView */,
 				A83BEAE626A5827000BE2890 /* Model */,
 				A83BEAD026A55CEB00BE2890 /* View */,
@@ -349,12 +360,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8E9143226C55097003CA804 /* DepartureViewCell.swift in Sources */,
-				A83BEADB26A5625100BE2890 /* PageArrivalVC.swift in Sources */,
+				A83BEADB26A5625100BE2890 /* PageArrivalCollectionCell.swift in Sources */,
 				A8F6BA482708BE4700FF4540 /* MenuBarCell.swift in Sources */,
 				A8E9142B26C40C66003CA804 /* DepartureModelView.swift in Sources */,
 				A86600A926B9037900DA28A9 /* RequestService.swift in Sources */,
 				117BD412270F601F009C7271 /* ArrivalDB.swift in Sources */,
 				A83BEAD826A55DAE00BE2890 /* DepartureViewController.swift in Sources */,
+				115EC8142712DC6600EE446B /* Extension + Realm.swift in Sources */,
 				A83BEAD626A55D8F00BE2890 /* ArrivalViewController.swift in Sources */,
 				117BD40B270F5F45009C7271 /* DataBaseService.swift in Sources */,
 				11D9A69F26F8F8D100EE4C9E /* ArrivalModelView.swift in Sources */,
@@ -514,7 +526,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RPG7899N34;
+				DEVELOPMENT_TEAM = SG9C53KBMD;
 				INFOPLIST_FILE = ArhAirport/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -533,7 +545,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RPG7899N34;
+				DEVELOPMENT_TEAM = SG9C53KBMD;
 				INFOPLIST_FILE = ArhAirport/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

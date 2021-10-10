@@ -43,7 +43,7 @@ class DepartureViewCell: UITableViewCell {
         setConstraint()
     }
     
-    func update(data: DepartureItem?) {
+    func update(data: DepartureDataList?) {
         if let data = data {
             departureLabel.text = data.arrivalTime
             aviaCompanyLabel.text = data.company

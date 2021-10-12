@@ -7,7 +7,6 @@
 
 import Foundation
 
-// MARK: - ArrivalModel
 struct ArrivalModel: Codable {
     let embedded: Arrival
 

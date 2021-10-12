@@ -8,25 +8,32 @@
 import Foundation
 import RealmSwift
 
-class PageDepartureModelView {
+final class PageDepartureModelView {
+    
+    typealias DepartureCallback = (DepartureData) -> ()
     
     let reqService = RequestService()
     let dataSerivce = DataBaseService()
-    let realm = try! Realm()
     
-    func createArrForPageDeparture(times: DayTimePage, test: DepartureData?, closure: @escaping (DepartureData) -> ()) {
+    weak var view: PageDepartureCollectionCell?
+    
+
+    func createArrForPageDeparture(times: DayTimePage, test: DepartureData?, closure: @escaping DepartureCallback) {
         
         reqService.getAirportTable(times: times, typeAirline: .departure) { result in
             
             
             switch result {
             case .failure(let error ):
-                print(error) //вывести алерт с ошибкой
-            case .success(let arrivalModel):
-                self.dataSerivce.addToRealmDeparure(model: arrivalModel as! DeparturesModel, oldModel: test)
-                let models = self.realm.objects(DepartureData.self)
+                print(error)
+            case .success(let departureModel):
+                self.dataSerivce.addToRealmDeparure(model: departureModel as! DeparturesModel, oldModel: test)
                 
-                closure(models.last!)
+                if let models = self.dataSerivce.getRealmEntity(entity: DepartureData()) {
+                    closure(models)
+                } else {
+                   // вывести ошибку
+                }
             }
         }
     }

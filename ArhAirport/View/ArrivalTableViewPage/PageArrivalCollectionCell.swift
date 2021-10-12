@@ -20,7 +20,7 @@ class PageArrivalCollectionCell: UICollectionViewCell {
     
     var day: DayTimePage!
     
-    private let viewModel: PageArrivalModelView!
+    private let viewModel: PageArrivalModelView?
     
     var arr: ArrivalData?
     
@@ -55,7 +55,7 @@ class PageArrivalCollectionCell: UICollectionViewCell {
     }
     
     func requestData()  {
-        viewModel.createArrForPageDeparture(times: day, test: arr, closure: { arrs in
+        viewModel?.createArrForPageDeparture(times: day, test: arr, closure: { arrs in
             self.arr = arrs
             self.tableView.reloadData()
         })

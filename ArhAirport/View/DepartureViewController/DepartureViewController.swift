@@ -12,7 +12,7 @@ class DepartureViewController: UIViewController {
 
     var selectedItem: IndexPath?
     
-    private var viewModel : DepartureModelView!
+    private var viewModel: DepartureModelView!
     
     let cellID = "CellID"
 

@@ -10,11 +10,12 @@ import RealmSwift
 
 class PageArrivalModelView {
     
+    typealias ArrivalCallback = (ArrivalData)->()
+    
     let reqService = RequestService()
     let dataSerivce = DataBaseService()
-    let realm = try! Realm()
     
-    func createArrForPageDeparture(times: DayTimePage, test: ArrivalData?, closure: @escaping (ArrivalData) -> ()) {
+    func createArrForPageDeparture(times: DayTimePage, test: ArrivalData?, closure: @escaping ArrivalCallback) {
         
         reqService.getAirportTable(times: times, typeAirline: .arrival) { result in
             
@@ -26,8 +27,11 @@ class PageArrivalModelView {
                 self.dataSerivce.addToRealmArrival(model: arrivalModel as! ArrivalModel, oldModel: test)
             }
             
-            let models = self.realm.objects(ArrivalData.self)
-            closure(models.last!)
+            if let models = self.dataSerivce.getRealmEntity(entity: ArrivalData()) {
+                closure(models)
+            } else {
+               // вывести ошибку
+            }
         }
     }
 }

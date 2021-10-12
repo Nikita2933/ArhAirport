@@ -12,21 +12,20 @@ class PageDepartureCollectionCell: UICollectionViewCell {
     
     let disposeBag = DisposeBag()
     
+    var viewModel: PageDepartureModelView?
+    
     let tableView: UITableView = {
         let table = UITableView()
         return table
     }()
     
     var day: DayTimePage!
-    
-    private let viewModel: PageDepartureModelView!
-    
     var arr: DepartureData?
     
     
     override init(frame: CGRect) {
-        self.viewModel = PageDepartureModelView()
         super.init(frame: frame)
+        viewModel = PageDepartureModelView()
         setupView()
         setupConstraint()
         setupTableView()
@@ -54,7 +53,7 @@ class PageDepartureCollectionCell: UICollectionViewCell {
     }
     
     func requestData()  {
-        viewModel.createArrForPageDeparture(times: day, test: arr, closure: { arrs in
+        viewModel?.createArrForPageDeparture(times: day, test: arr, closure: { arrs in
             self.arr = arrs
             self.tableView.reloadData()
         })

@@ -12,6 +12,16 @@ final class DataBaseService {
     
     let realm = try! Realm()
     
+    
+    func getRealmEntity<T:Object>(entity: T) -> T? {
+        let models = self.realm.objects(T.self)
+        if let modelsLast = models.last {
+            return modelsLast
+        } else {
+            return nil
+        }
+    }
+    
     func addToRealmDeparure(model: DeparturesModel, oldModel: DepartureData?) {
       
         try! realm.write({

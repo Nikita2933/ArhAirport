@@ -22,6 +22,9 @@
 		11D9A69F26F8F8D100EE4C9E /* ArrivalModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D9A69E26F8F8D100EE4C9E /* ArrivalModelView.swift */; };
 		11D9A6A126F8F9BD00EE4C9E /* ArrivalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D9A6A026F8F9BD00EE4C9E /* ArrivalModel.swift */; };
 		11D9A6A326F8FD1200EE4C9E /* ErrorHadler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D9A6A226F8FD1200EE4C9E /* ErrorHadler.swift */; };
+		11EE7EF4271C271F006495D6 /* DownloadOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EE7EF3271C271F006495D6 /* DownloadOperations.swift */; };
+		11EE7EF6271C29B7006495D6 /* AsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EE7EF5271C29B7006495D6 /* AsyncOperation.swift */; };
+		11EE7EF8271C2A69006495D6 /* DataBaseOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EE7EF7271C2A69006495D6 /* DataBaseOperations.swift */; };
 		11FF79CA27082D560086B58E /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FF79C927082D560086B58E /* MenuBar.swift */; };
 		A83BEACF26A55C5A00BE2890 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83BEACE26A55C5A00BE2890 /* TabBarViewController.swift */; };
 		A83BEAD226A55D3400BE2890 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83BEAD126A55D3400BE2890 /* ContactViewController.swift */; };
@@ -55,6 +58,9 @@
 		11D9A69E26F8F8D100EE4C9E /* ArrivalModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalModelView.swift; sourceTree = "<group>"; };
 		11D9A6A026F8F9BD00EE4C9E /* ArrivalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalModel.swift; sourceTree = "<group>"; };
 		11D9A6A226F8FD1200EE4C9E /* ErrorHadler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHadler.swift; sourceTree = "<group>"; };
+		11EE7EF3271C271F006495D6 /* DownloadOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadOperations.swift; sourceTree = "<group>"; };
+		11EE7EF5271C29B7006495D6 /* AsyncOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncOperation.swift; sourceTree = "<group>"; };
+		11EE7EF7271C2A69006495D6 /* DataBaseOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseOperations.swift; sourceTree = "<group>"; };
 		11FF79C927082D560086B58E /* MenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBar.swift; sourceTree = "<group>"; };
 		A83BEACE26A55C5A00BE2890 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		A83BEAD126A55D3400BE2890 /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
@@ -170,6 +176,7 @@
 			children = (
 				117BD40A270F5F45009C7271 /* DataBaseService.swift */,
 				A86600A826B9037900DA28A9 /* RequestService.swift */,
+				11EE7EF9271C96DA006495D6 /* OperationQuest */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -181,6 +188,16 @@
 				117BD411270F601F009C7271 /* ArrivalDB.swift */,
 			);
 			path = DataModel;
+			sourceTree = "<group>";
+		};
+		11EE7EF9271C96DA006495D6 /* OperationQuest */ = {
+			isa = PBXGroup;
+			children = (
+				11EE7EF5271C29B7006495D6 /* AsyncOperation.swift */,
+				11EE7EF7271C2A69006495D6 /* DataBaseOperations.swift */,
+				11EE7EF3271C271F006495D6 /* DownloadOperations.swift */,
+			);
+			path = OperationQuest;
 			sourceTree = "<group>";
 		};
 		A83BEAD026A55CEB00BE2890 /* View */ = {
@@ -360,6 +377,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8E9143226C55097003CA804 /* DepartureViewCell.swift in Sources */,
+				11EE7EF8271C2A69006495D6 /* DataBaseOperations.swift in Sources */,
 				A83BEADB26A5625100BE2890 /* PageArrivalCollectionCell.swift in Sources */,
 				A8F6BA482708BE4700FF4540 /* MenuBarCell.swift in Sources */,
 				A8E9142B26C40C66003CA804 /* DepartureModelView.swift in Sources */,
@@ -375,6 +393,7 @@
 				A8654A0326A18A86003B67A9 /* AppDelegate.swift in Sources */,
 				1109614226F91FDD00C78F9F /* ArrivalViewCell.swift in Sources */,
 				A8F2361426A6B3E50022A750 /* Alert.swift in Sources */,
+				11EE7EF4271C271F006495D6 /* DownloadOperations.swift in Sources */,
 				11D9A69D26F8F8BB00EE4C9E /* PageArrivalModelView.swift in Sources */,
 				A83BEAD226A55D3400BE2890 /* ContactViewController.swift in Sources */,
 				A83BEAEA26A5B91600BE2890 /* PageDepartureCollectionCell.swift in Sources */,
@@ -386,6 +405,7 @@
 				117BD410270F6015009C7271 /* DepartureDB.swift in Sources */,
 				A83BEAE326A5800300BE2890 /* NavigationController.swift in Sources */,
 				A83BEAE526A5803A00BE2890 /* Constants.swift in Sources */,
+				11EE7EF6271C29B7006495D6 /* AsyncOperation.swift in Sources */,
 				A8E9142D26C415D0003CA804 /* PageDepartureModelView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

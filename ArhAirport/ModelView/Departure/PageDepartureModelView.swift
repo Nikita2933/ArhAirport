@@ -12,29 +12,40 @@ final class PageDepartureModelView {
     
     typealias DepartureCallback = (DepartureData) -> ()
     
-    let reqService = RequestService()
     let dataSerivce = DataBaseService()
     
     weak var view: PageDepartureCollectionCell?
     
 
     func createArrForPageDeparture(times: DayTimePage, test: DepartureData?, closure: @escaping DepartureCallback) {
-        
-        reqService.getAirportTable(times: times, typeAirline: .departure) { result in
-            
-            
-            switch result {
-            case .failure(let error ):
-                print(error)
-            case .success(let departureModel):
-                self.dataSerivce.addToRealmDeparure(model: departureModel as! DeparturesModel, oldModel: test)
-                
-                if let models = self.dataSerivce.getRealmEntity(entity: DepartureData()) {
-                    closure(models)
-                } else {
-                   // вывести ошибку
+        let downloadOperation = DownloadOperations(times: times, typeAirline: .departure)
+        let dataBaseOperation = DataBaseOperations(type: .departure, old: test)
+
+        let secondOperations = BlockOperation {
+            if let result = downloadOperation.result {
+                switch result {
+                case .failure(let error):
+                    print(error)
+                    dataBaseOperation.cancel()
+                case .success(let departureModel):
+                    DispatchQueue.main.async {
+                        dataBaseOperation.model = departureModel
+                        dataBaseOperation.start()
+                        if let data = dataBaseOperation.outputObject as? DepartureData {
+                            closure(data)
+                        }
+                    }
                 }
+
             }
         }
+        
+        
+        secondOperations.addDependency(downloadOperation)
+
+        let operationQueue = OperationQueue()
+        
+        operationQueue.maxConcurrentOperationCount = 1
+        operationQueue.addOperations([downloadOperation, secondOperations], waitUntilFinished: true)
     }
 }

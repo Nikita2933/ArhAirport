@@ -53,7 +53,7 @@ class PageDepartureCollectionCell: UICollectionViewCell {
     }
     
     func requestData()  {
-        viewModel?.createArrForPageDeparture(times: day, test: arr, closure: { arrs in
+        viewModel?.createArrForPageDeparture(times: day, old: arr, closure: { arrs in
             self.arr = arrs
             DispatchQueue.main.async {
                 self.tableView.reloadData()

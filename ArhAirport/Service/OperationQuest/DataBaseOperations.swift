@@ -9,7 +9,7 @@ import Foundation
 import RealmSwift
 
 final class DataBaseOperations: Operation {
-   
+
     var realm = try! Realm()
     
     let type: TypeTableAirline!
@@ -22,7 +22,10 @@ final class DataBaseOperations: Operation {
     
     override func main() {
         super.main()
-        setup(model: model!)
+        DispatchQueue.main.async {
+            self.setup(model: self.model!)
+        }
+
     }
     
     func setup(model: Codable) {

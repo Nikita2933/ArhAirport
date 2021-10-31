@@ -53,9 +53,7 @@ final class DownloadOperations: AsyncOperation {
             .accept("text/html; charset=utf-8")
         ]
         
-//        let url = URL(fileURLWithPath: )
-        
-        let urlRequest = try! URLRequest(url: component?.url?.absoluteString as! URLConvertible, method: .get, headers: headers)
+        let urlRequest = try! URLRequest(url: component?.url?.absoluteString as URLConvertible, method: .get, headers: headers)
         let urlSession = URLSession(configuration: .default)
         urlSession.dataTask(with: urlRequest) { data, response, error in
             if error != nil {

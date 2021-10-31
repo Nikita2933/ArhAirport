@@ -17,16 +17,14 @@ final class PageDepartureModelView {
     weak var view: PageDepartureCollectionCell?
     
 
-    func createArrForPageDeparture(times: DayTimePage, test: DepartureData?, closure: @escaping DepartureCallback) {
+    func createArrForPageDeparture(times: DayTimePage, old: DepartureData?, closure: @escaping DepartureCallback) {
         let downloadOperation = DownloadOperations(times: times, typeAirline: .departure)
-        let dataBaseOperation = DataBaseOperations(type: .departure, old: test)
+        let dataBaseOperation = DataBaseOperations(type: .departure, old: old)
         dataBaseOperation.addDependency(downloadOperation)
         
         let operationQueue = OperationQueue()
-    
-        operationQueue.addOperation(downloadOperation)
-        
-        operationQueue.addBarrierBlock {
+
+        downloadOperation.completionBlock = {
             if let result = downloadOperation.result {
                 switch result {
                 case .failure(let error):
@@ -34,15 +32,20 @@ final class PageDepartureModelView {
                     dataBaseOperation.cancel()
                 case .success(let departureModel):
                     dataBaseOperation.model = departureModel
-                    DispatchQueue.main.async {
-                        dataBaseOperation.start()
-                        if let data = dataBaseOperation.outputObject as? DepartureData {
-                            closure(data)
-                        }
-                    }
+
                 }
             }
         }
+        dataBaseOperation.completionBlock = {
+            DispatchQueue.main.async {
+                if let object = dataBaseOperation.outputObject as? DepartureData {
+                    closure(object)
+                }
+            }
+        }
+        operationQueue.maxConcurrentOperationCount = 1
+        operationQueue.addOperations([downloadOperation, dataBaseOperation], waitUntilFinished: true)
+
     }
 }
 

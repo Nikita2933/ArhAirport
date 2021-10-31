@@ -21,8 +21,6 @@ final class PageDepartureModelView {
         let downloadOperation = DownloadOperations(times: times, typeAirline: .departure)
         let dataBaseOperation = DataBaseOperations(type: .departure, old: old)
         dataBaseOperation.addDependency(downloadOperation)
-        
-        let operationQueue = OperationQueue()
 
         downloadOperation.completionBlock = {
             if let result = downloadOperation.result {
@@ -32,18 +30,17 @@ final class PageDepartureModelView {
                     dataBaseOperation.cancel()
                 case .success(let departureModel):
                     dataBaseOperation.model = departureModel
-
                 }
             }
         }
         dataBaseOperation.completionBlock = {
-            DispatchQueue.main.async {
+            DispatchQueue.main.sync {
                 if let object = dataBaseOperation.outputObject as? DepartureData {
                     closure(object)
                 }
             }
         }
-        operationQueue.maxConcurrentOperationCount = 1
+        let operationQueue = OperationQueue()
         operationQueue.addOperations([downloadOperation, dataBaseOperation], waitUntilFinished: true)
 
     }

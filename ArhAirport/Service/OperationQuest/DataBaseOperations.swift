@@ -31,13 +31,15 @@ final class DataBaseOperations: Operation {
     func setup(model: Codable) {
         switch type {
         case .departure:
-            addToRealmDeparure(model: model as! DeparturesModel, oldModel: old as? DepartureData) {
-                self.outputObject = getDepartureEntity()
+            addToRealmDeparure(model: model as! DeparturesModel, oldModel: old as? DepartureData) { [weak self] in
+                self?.outputObject = getDepartureEntity()
             }
             
         case .arrival:
-            addToRealmArrival(model: model as! ArrivalModel, oldModel: old as? ArrivalData)
-            self.outputObject = getRealmEntity(entity: ArrivalData())
+            addToRealmArrival(model: model as! ArrivalModel, oldModel: old as? ArrivalData) {
+                [weak self] in
+                self?.outputObject = getRealmEntity(entity: ArrivalData())
+            }
         case .none:
             break
         }
@@ -100,7 +102,7 @@ final class DataBaseOperations: Operation {
         })
     }
     
-    func addToRealmArrival(model: ArrivalModel, oldModel: ArrivalData?) {
+    func addToRealmArrival(model: ArrivalModel, oldModel: ArrivalData?, closure: ()->()) {
         
         try! realm.write({
             if let oldModel = oldModel {
@@ -131,7 +133,7 @@ final class DataBaseOperations: Operation {
                 
             }
             realm.add(departureData)
-            
+            closure()
         })
     }
 }

@@ -14,9 +14,9 @@ final class DownloadOperations: AsyncOperation {
     var result: Result<Codable, APIServiceError>? = nil
     
     override func main() {
-        getAirportTable(times: times, typeAirline: typeAirline) { result in
-            self.result = result
-            self.state = .finished
+        getAirportTable(times: times, typeAirline: typeAirline) { [weak self] result in
+            self?.result = result
+            self?.state = .finished
         }
     }
 
@@ -53,7 +53,8 @@ final class DownloadOperations: AsyncOperation {
             .accept("text/html; charset=utf-8")
         ]
         
-        let urlRequest = try! URLRequest(url: component?.url?.absoluteString as URLConvertible, method: .get, headers: headers)
+        let urlRequest = try! URLRequest(url: component?.url?.absoluteString as! URLConvertible,
+                                         method: .get, headers: headers)
         let urlSession = URLSession(configuration: .default)
         urlSession.dataTask(with: urlRequest) { data, response, error in
             if error != nil {

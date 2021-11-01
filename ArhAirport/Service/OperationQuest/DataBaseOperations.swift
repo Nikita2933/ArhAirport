@@ -21,11 +21,15 @@ final class DataBaseOperations: Operation {
     var outputObject: Object? = nil
     
     override func main() {
+        print("initDatabase")
         super.main()
         DispatchQueue.main.async {
             self.setup(model: self.model!)
         }
 
+    }
+    deinit {
+        print("deinitDatabase")
     }
     
     func setup(model: Codable) {

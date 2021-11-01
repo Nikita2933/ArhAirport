@@ -15,7 +15,8 @@ final class PageDepartureModelView {
     let dataSerivce = DataBaseService()
     
     weak var view: PageDepartureCollectionCell?
-    
+
+    let operationQueue = OperationQueue()
 
     func createArrForPageDeparture(times: DayTimePage, old: DepartureData?, closure: @escaping DepartureCallback) {
         let downloadOperation = DownloadOperations(times: times, typeAirline: .departure)
@@ -40,9 +41,8 @@ final class PageDepartureModelView {
                 }
             }
         }
-        let operationQueue = OperationQueue()
-        operationQueue.addOperations([downloadOperation, dataBaseOperation], waitUntilFinished: true)
 
+        operationQueue.addOperations([downloadOperation, dataBaseOperation], waitUntilFinished: false)
     }
 }
 

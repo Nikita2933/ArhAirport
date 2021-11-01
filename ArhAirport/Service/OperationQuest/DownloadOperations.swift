@@ -14,10 +14,15 @@ final class DownloadOperations: AsyncOperation {
     var result: Result<Codable, APIServiceError>? = nil
     
     override func main() {
+        print("initDownload")
         getAirportTable(times: times, typeAirline: typeAirline) { [weak self] result in
             self?.result = result
             self?.state = .finished
         }
+    }
+
+    deinit {
+        print("deinitDownload")
     }
 
     init(times: DayTimePage, typeAirline: TypeTableAirline) {

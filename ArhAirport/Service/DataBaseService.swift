@@ -23,7 +23,6 @@ final class DataBaseService {
     }
     
     func addToRealmDeparure(model: DeparturesModel, oldModel: DepartureData?) {
-      
         try! realm.write({
             if let oldModel = oldModel {
                 self.realm.delete(oldModel)
@@ -58,7 +57,6 @@ final class DataBaseService {
     }
     
     func addToRealmArrival(model: ArrivalModel, oldModel: ArrivalData?) {
-      
         try! realm.write({
             if let oldModel = oldModel {
                 self.realm.delete(oldModel)

@@ -37,6 +37,7 @@
 		A8654A0C26A18A88003B67A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8654A0B26A18A88003B67A9 /* Assets.xcassets */; };
 		A8654A0F26A18A88003B67A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8654A0D26A18A88003B67A9 /* LaunchScreen.storyboard */; };
 		A86600A926B9037900DA28A9 /* RequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86600A826B9037900DA28A9 /* RequestService.swift */; };
+		A8A747B1273C2ED700A75F9B /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A747B0273C2ED700A75F9B /* Factory.swift */; };
 		A8E9142B26C40C66003CA804 /* DepartureModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E9142A26C40C66003CA804 /* DepartureModelView.swift */; };
 		A8E9142D26C415D0003CA804 /* PageDepartureModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E9142C26C415D0003CA804 /* PageDepartureModelView.swift */; };
 		A8E9143226C55097003CA804 /* DepartureViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E9143126C55097003CA804 /* DepartureViewCell.swift */; };
@@ -72,6 +73,7 @@
 		A8654A0E26A18A88003B67A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A8654A1026A18A88003B67A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A86600A826B9037900DA28A9 /* RequestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestService.swift; sourceTree = "<group>"; };
+		A8A747B0273C2ED700A75F9B /* Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factory.swift; sourceTree = "<group>"; };
 		A8E9142A26C40C66003CA804 /* DepartureModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartureModelView.swift; sourceTree = "<group>"; };
 		A8E9142C26C415D0003CA804 /* PageDepartureModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageDepartureModelView.swift; sourceTree = "<group>"; };
 		A8E9143126C55097003CA804 /* DepartureViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartureViewCell.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 			children = (
 				117BD40A270F5F45009C7271 /* DataBaseService.swift */,
 				A86600A826B9037900DA28A9 /* RequestService.swift */,
+				A8A747B0273C2ED700A75F9B /* Factory.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 				A8F6BA482708BE4700FF4540 /* MenuBarCell.swift in Sources */,
 				A8E9142B26C40C66003CA804 /* DepartureModelView.swift in Sources */,
 				A86600A926B9037900DA28A9 /* RequestService.swift in Sources */,
+				A8A747B1273C2ED700A75F9B /* Factory.swift in Sources */,
 				117BD412270F601F009C7271 /* ArrivalDB.swift in Sources */,
 				A83BEAD826A55DAE00BE2890 /* DepartureViewController.swift in Sources */,
 				115EC8142712DC6600EE446B /* Extension + Realm.swift in Sources */,

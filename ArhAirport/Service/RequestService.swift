@@ -42,38 +42,38 @@ final class RequestService {
                    headers: headers,
                    interceptor: nil,
                    requestModifier: .none).responseString { result in
-                    if result.error != nil {
-                        closure(.failure(.badGateway))
-                        return
-                    }
-                    
-                    guard let statusCode = (result.response)?.statusCode, 200..<299 ~= statusCode else {
-                        closure(.failure(.invalidResponse))
-                        return
-                    }
-                    
-                    guard let data = result.data else {
-                        closure(.failure(.noData))
-                        return
-                    }
-                    
-                    switch typeAirline {
-                    case .arrival:
-                        do {
-                            let decodedData = try JSONDecoder().decode(ArrivalModel.self, from: data)
-                            closure(.success(decodedData))
-                        } catch  {
-                            closure(.failure(.decodeError)) //MARK: Вывести алерт с ошибкой
-                        }
-                    case .departure:
-                        do {
-                            let decodedData = try JSONDecoder().decode(DeparturesModel.self, from: data)
-                            closure(.success(decodedData))
-                        } catch  {
-                            closure(.failure(.decodeError))  //MARK: Вывести алерт с ошибкой
-                        }
-                    }
-                   }
+            if result.error != nil {
+                closure(.failure(.badGateway))
+                return
+            }
+
+            guard let statusCode = (result.response)?.statusCode, 200..<299 ~= statusCode else {
+                closure(.failure(.invalidResponse))
+                return
+            }
+
+            guard let data = result.data else {
+                closure(.failure(.noData))
+                return
+            }
+            
+            switch typeAirline {
+            case .arrival:
+                do {
+                    let decodedData = try JSONDecoder().decode(ArrivalModel.self, from: data)
+                    closure(.success(decodedData))
+                } catch  {
+                    closure(.failure(.decodeError)) //MARK: Вывести алерт с ошибкой
+                }
+            case .departure:
+                do {
+                    let decodedData = try JSONDecoder().decode(DeparturesModel.self, from: data)
+                    closure(.success(decodedData))
+                } catch  {
+                    closure(.failure(.decodeError))  //MARK: Вывести алерт с ошибкой
+                }
+            }
+        }
     }
 }
 

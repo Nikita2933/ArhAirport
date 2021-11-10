@@ -12,7 +12,7 @@ class ArrivalViewController: UIViewController {
 
     var selectedItem: IndexPath?
     
-    private var viewModel : PageArrivalModelView!
+    private var viewModel : ArrivalModelView!
     
     let cellID = "CellID"
 
@@ -35,7 +35,7 @@ class ArrivalViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel = PageArrivalModelView()
+        viewModel = ArrivalModelView()
         setupView()
         setupConstraint()
         setupCollectionView()

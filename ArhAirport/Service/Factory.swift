@@ -6,8 +6,12 @@
 //
 
 import Foundation
+import RealmSwift
 
+protocol Factory {
 
-final class Factory {
-    
+    typealias CallBack = (Object) -> ()
+
+    func getEntity(times: DayTimePage, oldObject: Object?, closure: @escaping CallBack)
 }
+

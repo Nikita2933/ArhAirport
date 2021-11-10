@@ -38,6 +38,9 @@
 		A8654A0F26A18A88003B67A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8654A0D26A18A88003B67A9 /* LaunchScreen.storyboard */; };
 		A86600A926B9037900DA28A9 /* RequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86600A826B9037900DA28A9 /* RequestService.swift */; };
 		A8A747B1273C2ED700A75F9B /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A747B0273C2ED700A75F9B /* Factory.swift */; };
+		A8A747B3273C5E2C00A75F9B /* ArrivalFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A747B2273C5E2C00A75F9B /* ArrivalFactory.swift */; };
+		A8A747B5273C620300A75F9B /* DepartureFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A747B4273C620300A75F9B /* DepartureFactory.swift */; };
+		A8A747B7273C628600A75F9B /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A747B6273C628600A75F9B /* Service.swift */; };
 		A8E9142B26C40C66003CA804 /* DepartureModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E9142A26C40C66003CA804 /* DepartureModelView.swift */; };
 		A8E9142D26C415D0003CA804 /* PageDepartureModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E9142C26C415D0003CA804 /* PageDepartureModelView.swift */; };
 		A8E9143226C55097003CA804 /* DepartureViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E9143126C55097003CA804 /* DepartureViewCell.swift */; };
@@ -74,6 +77,9 @@
 		A8654A1026A18A88003B67A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A86600A826B9037900DA28A9 /* RequestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestService.swift; sourceTree = "<group>"; };
 		A8A747B0273C2ED700A75F9B /* Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factory.swift; sourceTree = "<group>"; };
+		A8A747B2273C5E2C00A75F9B /* ArrivalFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalFactory.swift; sourceTree = "<group>"; };
+		A8A747B4273C620300A75F9B /* DepartureFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartureFactory.swift; sourceTree = "<group>"; };
+		A8A747B6273C628600A75F9B /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		A8E9142A26C40C66003CA804 /* DepartureModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartureModelView.swift; sourceTree = "<group>"; };
 		A8E9142C26C415D0003CA804 /* PageDepartureModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageDepartureModelView.swift; sourceTree = "<group>"; };
 		A8E9143126C55097003CA804 /* DepartureViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartureViewCell.swift; sourceTree = "<group>"; };
@@ -102,6 +108,7 @@
 			children = (
 				A8E9142A26C40C66003CA804 /* DepartureModelView.swift */,
 				A8E9142C26C415D0003CA804 /* PageDepartureModelView.swift */,
+				A8A747B4273C620300A75F9B /* DepartureFactory.swift */,
 			);
 			path = Departure;
 			sourceTree = "<group>";
@@ -111,6 +118,7 @@
 			children = (
 				11D9A69E26F8F8D100EE4C9E /* ArrivalModelView.swift */,
 				11D9A69C26F8F8BB00EE4C9E /* PageArrivalModelView.swift */,
+				A8A747B2273C5E2C00A75F9B /* ArrivalFactory.swift */,
 			);
 			path = Arrival;
 			sourceTree = "<group>";
@@ -172,6 +180,7 @@
 			children = (
 				117BD40A270F5F45009C7271 /* DataBaseService.swift */,
 				A86600A826B9037900DA28A9 /* RequestService.swift */,
+				A8A747B6273C628600A75F9B /* Service.swift */,
 				A8A747B0273C2ED700A75F9B /* Factory.swift */,
 			);
 			path = Service;
@@ -362,6 +371,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8A747B3273C5E2C00A75F9B /* ArrivalFactory.swift in Sources */,
+				A8A747B5273C620300A75F9B /* DepartureFactory.swift in Sources */,
 				A8E9143226C55097003CA804 /* DepartureViewCell.swift in Sources */,
 				A83BEADB26A5625100BE2890 /* PageArrivalCollectionCell.swift in Sources */,
 				A8F6BA482708BE4700FF4540 /* MenuBarCell.swift in Sources */,
@@ -382,6 +393,7 @@
 				11D9A69D26F8F8BB00EE4C9E /* PageArrivalModelView.swift in Sources */,
 				A83BEAD226A55D3400BE2890 /* ContactViewController.swift in Sources */,
 				A83BEAEA26A5B91600BE2890 /* PageDepartureCollectionCell.swift in Sources */,
+				A8A747B7273C628600A75F9B /* Service.swift in Sources */,
 				A8654A0526A18A86003B67A9 /* SceneDelegate.swift in Sources */,
 				11D9A6A126F8F9BD00EE4C9E /* ArrivalModel.swift in Sources */,
 				11FF79CA27082D560086B58E /* MenuBar.swift in Sources */,

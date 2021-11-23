@@ -13,23 +13,16 @@ import RxSwift
 class TabBarViewController: UITabBarController {
 
     
-    var ArrViewController: [UIViewController] = {
-        var arr: [UIViewController] = []
-        arr.append(ArrivalViewController())
-        arr.append(DepartureViewController())
-        arr.append(WeatherViewController())
-        arr.append(ContactViewController())
-        return arr
-    }()
+    private var ArrViewController: [UIViewController] = []
     
 
     
-    let settingsBar: UIBarButtonItem = {
+    private let settingsBar: UIBarButtonItem = {
         let button = UIBarButtonItem(title: "Настройки", style: .done, target: nil, action: nil)
         return button
     }()
     
-    let barButtonMenu: UIMenu = {
+    private let barButtonMenu: UIMenu = {
         let menu = UIMenu(title: "", image: nil, identifier: .alignment, options: .displayInline, children: [
             UIAction(title: NSLocalizedString("Copy", comment: ""), image: UIImage(systemName: "doc.on.doc"), handler: {_ in print("1")}),
             UIAction(title: NSLocalizedString("Rename", comment: ""), image: UIImage(systemName: "pencil"), handler: {_ in print("1")}),
@@ -38,14 +31,26 @@ class TabBarViewController: UITabBarController {
         ])
         return menu
     }()
-    
+
+    func setupTabBar() {
+
+        var arr: [UIViewController] = []
+        arr.append(ArrivalViewController())
+        arr.append(DepartureViewController())
+        arr.append(WeatherModuleBuilder().createModule())
+        arr.append(ContactViewController())
+
+        ArrViewController = arr
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupTabBar()
         self.view.backgroundColor = Constants.colorTabBar
         self.setViewControllers(ArrViewController, animated: true)
         setupNavigator()
     }
+
     private func setupNavigator() {
         self.navigationItem.title = self.ArrViewController.first?.title
         self.navigationItem.rightBarButtonItem = settingsBar

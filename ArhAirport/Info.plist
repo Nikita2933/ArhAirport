@@ -4,6 +4,8 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>apiKey</key>
+	<string>90c96242eded9183b38f63a2950df424</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -45,10 +47,11 @@
 	<array>
 		<string>armv7</string>
 	</array>
-    <key>NSAppTransportSecurity</key>
-         <dict>
-              <key>NSAllowsArbitraryLoads</key><true/>
-         </dict>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

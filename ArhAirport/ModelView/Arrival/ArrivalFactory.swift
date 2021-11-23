@@ -10,7 +10,7 @@ import RealmSwift
 
  final class ArrivalFactory: Factory {
     
-     let reqService = Service.reqService
+     let reqService = Service.apiAirport
      let dataSerivce = Service.dataSerivce
 
     func getEntity(times: DayTimePage, oldObject: Object?, closure: @escaping CallBack) {

@@ -1,5 +1,5 @@
 //
-//  ParcerHtml.swift
+//  ApiAirport.swift
 //  ArhAirport
 //
 //  Created by Никита Иванов on 03.08.2021.
@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 
-final class RequestService {
+final class ApiAirport {
     
     func getAirportTable(times: DayTimePage, typeAirline: TypeTableAirline, closure: @escaping (Result<Codable,APIServiceError>) -> () )  {
         
@@ -20,9 +20,9 @@ final class RequestService {
         case .today:
             break
         case .tomorrow:
-            timeDay += 86400
-        case .yesterday:
             timeDay -= 86400
+        case .yesterday:
+            timeDay += 86400
         }
         
         let date = dateformatter.string(from: timeDay)

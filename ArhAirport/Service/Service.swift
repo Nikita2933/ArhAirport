@@ -8,6 +8,9 @@
 import Foundation
 
 public class Service {
-    static var reqService = RequestService()
+    static var apiAirport = ApiAirport()
+    static var apiWeather = ApiWeather()
+    
     static var dataSerivce = DataBaseService()
+
 }

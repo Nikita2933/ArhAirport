@@ -6,18 +6,45 @@
 //
 
 import UIKit
+import SnapKit
 
 class WeatherViewController: UIViewController {
 
+    var output: WeatherViewOutput?
+
+    var weatherDataModel: WeatherDataModel!
+
+    private let scrollView: UIScrollView = {
+        var view = UIScrollView()
+        return view
+    }()
+
+    private let cityLabel: UILabel = {
+        var label = UILabel()
+        return label
+    }()
+
+    private let tempLabel: UILabel = {
+        var label = UILabel()
+        return label
+    }()
+
+    private let imageWeather: UIImageView = {
+        var imageView = UIImageView()
+        return imageView
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .brown
-        
-        // Do any additional setup after loading the view.
+        output?.getWeatherData()
     }
     
     init() {
         super.init(nibName: nil, bundle: nil)
+        configureUI()
+    }
+
+    func configureUI(){
         title = "Погода"
     }
     
@@ -36,3 +63,12 @@ class WeatherViewController: UIViewController {
     */
 
 }
+extension WeatherViewController: WeatherViewInput {
+    func setup(viewModels: WeatherDataModel?) {
+        print(viewModels?.hourly[0].temp)
+    }
+}
+
+
+
+

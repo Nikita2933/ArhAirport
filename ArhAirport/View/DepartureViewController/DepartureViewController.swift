@@ -81,8 +81,6 @@ class DepartureViewController: UIViewController {
         menuBar.collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .top)
     }
 
-   
-    
     init() {
         super.init(nibName: nil, bundle: nil)
         title = "Вылет"

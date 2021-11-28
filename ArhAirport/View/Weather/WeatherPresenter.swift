@@ -7,7 +7,7 @@
 
 import Foundation
 
-class WeatherPresenter {
+final class WeatherPresenter {
     private var weatherInteractor: WeatherInteractor
 
     var view: WeatherViewInput!
@@ -19,7 +19,7 @@ class WeatherPresenter {
 
 extension WeatherPresenter: WeatherViewOutput {
 
-    func getWeatherData() {
+    func viewDidLoad() {
         weatherInteractor.getWeatherData(oldmodel: view.weatherDataModel) { weatherData in
             self.view.setup(viewModels: weatherData as? WeatherDataModel)
         }

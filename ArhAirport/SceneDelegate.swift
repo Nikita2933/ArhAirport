@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowscene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: windowscene.coordinateSpace.bounds)
         let navigator = UINavigationController()
-        navigator.navigationBar.barTintColor = Constants.colorTabBar
+        navigator.navigationBar.barTintColor = Constants.navigationBarColor
         let root = TabBarViewController()
         navigator.viewControllers = [root]
         window?.windowScene = windowscene

@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum APIServiceError: String, Error {
+enum APIServiceError: String, Error, LocalizedError {
     case badGateway = "Плохое соединение"
     case decodeError = "Ошибка кодирования"
     case invalidResponse = "Плохой ответ"

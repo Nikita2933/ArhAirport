@@ -9,8 +9,16 @@ import Foundation
 import UIKit
 
 struct Constants {
-    static let colorTabBar = #colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)
+    static let navigationBarColor = #colorLiteral(red: 0.1699241276, green: 0.488913675, blue: 0.7010199858, alpha: 1)
+    static let tabBarColor = #colorLiteral(red: 0.8771104407, green: 0.8771104407, blue: 0.8771104407, alpha: 1)
+
+    public enum DescriptionString: String {
+        case airportLabel = "Аэропорт Талаги"
+    }
 }
+
+
+
 
 public enum TypeTableAirline: String {
     case arrival = "arrival"

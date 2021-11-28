@@ -15,8 +15,6 @@ class TabBarViewController: UITabBarController {
     
     private var ArrViewController: [UIViewController] = []
     
-
-    
     private let settingsBar: UIBarButtonItem = {
         let button = UIBarButtonItem(title: "Настройки", style: .done, target: nil, action: nil)
         return button
@@ -33,20 +31,19 @@ class TabBarViewController: UITabBarController {
     }()
 
     func setupTabBar() {
-
         var arr: [UIViewController] = []
         arr.append(ArrivalViewController())
         arr.append(DepartureViewController())
         arr.append(WeatherModuleBuilder().createModule())
         arr.append(ContactViewController())
-
         ArrViewController = arr
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTabBar()
-        self.view.backgroundColor = Constants.colorTabBar
+        self.tabBar.backgroundColor = Constants.tabBarColor
+        self.view.backgroundColor = Constants.navigationBarColor
         self.setViewControllers(ArrViewController, animated: true)
         setupNavigator()
     }

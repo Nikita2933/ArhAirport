@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 import RealmSwift
 
-class WeatherInteractor {
+final class WeatherInteractor {
 
     typealias CallBack = (Object) -> ()
 

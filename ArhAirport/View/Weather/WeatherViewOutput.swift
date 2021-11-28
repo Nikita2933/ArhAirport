@@ -8,6 +8,6 @@
 import Foundation
 
 protocol WeatherViewOutput {
-    func getWeatherData()
+    func viewDidLoad()
     
 }

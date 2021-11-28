@@ -28,6 +28,7 @@ final class MenuBar: UIView {
     private lazy var whiteScrollView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
+        view.layer.cornerRadius = 3
         return view
     }()
     
@@ -74,7 +75,7 @@ final class MenuBar: UIView {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.backgroundColor = Constants.colorTabBar
+        collectionView.backgroundColor = Constants.navigationBarColor
         collectionView.register(MenuBarCell.self, forCellWithReuseIdentifier: cellId)
         collectionView.showsVerticalScrollIndicator = false
         collectionView.showsHorizontalScrollIndicator = false

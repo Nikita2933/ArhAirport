@@ -100,7 +100,6 @@ final class WeatherViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = Constants.DescriptionString.airportLabel.rawValue
         addView()
         setupConstraint()
         output?.viewDidLoad()

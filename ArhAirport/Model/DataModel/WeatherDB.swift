@@ -33,7 +33,7 @@ class CurrentData: Object {
     let windGust = RealmProperty<Double?>()
     @objc dynamic var windDeg: Int = 0
     let pop = RealmProperty<Double?>()
-    let weather = List<WeatherData>()
+    @objc dynamic var weather: WeatherData?
     @objc dynamic var rain: RainData?
     @objc dynamic var snow: SnowData?
 }

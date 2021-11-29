@@ -35,6 +35,8 @@ class DepartureViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Вылет"
+
         viewModel = DepartureModelView()
         setupView()
         setupConstraint()
@@ -79,15 +81,6 @@ class DepartureViewController: UIViewController {
         let indexPath = IndexPath(item: Int(index), section: 0)
         
         menuBar.collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .top)
-    }
-
-    init() {
-        super.init(nibName: nil, bundle: nil)
-        title = "Вылет"
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
     
 }

@@ -55,7 +55,6 @@ final class ApiWeather {
             .responseString { result in
 
                 if result.error != nil {
-                    print(result.error)
                     closure(.failure(.badGateway))
                     return
                 }
@@ -75,7 +74,7 @@ final class ApiWeather {
                     closure(.success(decodedData))
                 } catch  {
                     print(error)
-                    closure(.failure(.decodeError)) //MARK: Вывести алерт с ошибкой
+                    closure(.failure(.decodeError))
                 }
             }
     }

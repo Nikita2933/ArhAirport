@@ -49,7 +49,6 @@ class DepartureViewCell: UITableViewCell {
             aviaCompanyLabel.text = data.company
             reisNameLabel.text = data.flight
             flyDirectionLabel.text = data.airportArrival
-            print(data)
             
             statusLabel.text = data.remark
             if statusLabel.text?.contains("  ") ?? false {

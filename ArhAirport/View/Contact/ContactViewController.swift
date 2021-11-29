@@ -12,17 +12,10 @@ class ContactViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .red
+        title = "Контакты"
         // Do any additional setup after loading the view.
     }
-    
-    init() {
-        super.init(nibName: nil, bundle: nil)
-        title = "Контакты"
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+
     
     /*
     // MARK: - Navigation

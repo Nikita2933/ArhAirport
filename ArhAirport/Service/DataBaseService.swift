@@ -109,7 +109,7 @@ final class DataBaseService {
                 weatherData.main = weather.main
                 weatherData.weatherDescription = weather.weatherDescription
 
-                weatherDataModel.current?.weather.append(weatherData)
+                weatherDataModel.current?.weather = weatherData
             }
 
             let rainData = RainData()
@@ -145,6 +145,16 @@ final class DataBaseService {
         currentData.windGust.value = currentModel.windGust
         currentData.windDeg = currentModel.windDeg
         currentData.pop.value = currentModel.pop
+
+        currentModel.weather.forEach { weather in
+            let weatherData = WeatherData()
+            weatherData.icon = weather.icon
+            weatherData.id = weather.id
+            weatherData.main = weather.main
+            weatherData.weatherDescription = weather.weatherDescription
+
+            currentData.weather = weatherData
+        }
 
         return currentData
     }

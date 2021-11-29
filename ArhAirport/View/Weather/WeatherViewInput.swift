@@ -10,5 +10,5 @@ import Foundation
 protocol WeatherViewInput {
     func setup(viewModels: WeatherDataModel?)
 
-    var weatherDataModel: WeatherDataModel! { get set }
+    var weatherDataModel: WeatherDataModel? { get set }
 }

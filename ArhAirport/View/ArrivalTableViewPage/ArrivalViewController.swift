@@ -35,6 +35,7 @@ class ArrivalViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Прилёт"
         viewModel = ArrivalModelView()
         setupView()
         setupConstraint()
@@ -79,17 +80,6 @@ class ArrivalViewController: UIViewController {
         let indexPath = IndexPath(item: Int(index), section: 0)
         
         menuBar.collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .top)
-    }
-
-   
-    
-    init() {
-        super.init(nibName: nil, bundle: nil)
-        title = "Прилёт"
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
     
 }

@@ -14,9 +14,11 @@ class TabBarViewController: UITabBarController {
 
     
     private var ArrViewController: [UIViewController] = []
-    
-    private let settingsBar: UIBarButtonItem = {
-        let button = UIBarButtonItem(title: "Настройки", style: .done, target: nil, action: nil)
+
+    private var settingsBar: UIBarButtonItem = {
+        let button = UIBarButtonItem(title: nil, style: .done, target: nil, action: nil)
+        button.image = UIImage(named: "menuIcon")?.withTintColor(.black)
+        button.tintColor = .black
         return button
     }()
     
@@ -32,10 +34,23 @@ class TabBarViewController: UITabBarController {
 
     func setupTabBar() {
         var arr: [UIViewController] = []
-        arr.append(ArrivalViewController())
-        arr.append(DepartureViewController())
-        arr.append(WeatherModuleBuilder().createModule())
-        arr.append(ContactViewController())
+        let arrival = ArrivalViewController()
+        let departure = DepartureViewController()
+        let weather = WeatherModuleBuilder().createModule()
+        let contact = ContactViewController()
+
+        weather.tabBarItem.image = UIImage(named: "weather-partly-cloudy")
+        weather.title = Constants.DescriptionString.weather.rawValue
+        arrival.tabBarItem.image = UIImage(named: "airplane-landing")
+        arrival.title = Constants.DescriptionString.arrival.rawValue
+        departure.tabBarItem.image = UIImage(named: "airplane-takeoff")
+        departure.title = Constants.DescriptionString.departure.rawValue
+        contact.tabBarItem.image = UIImage(named: "book-open-blank-variant")
+        contact.title = Constants.DescriptionString.contact.rawValue
+        arr.append(arrival)
+        arr.append(departure)
+        arr.append(weather)
+        arr.append(contact)
         ArrViewController = arr
     }
 
@@ -49,25 +64,14 @@ class TabBarViewController: UITabBarController {
     }
 
     private func setupNavigator() {
-        self.navigationItem.title = self.ArrViewController.first?.title
+        self.navigationItem.title = Constants.DescriptionString.airportLabel.rawValue
         self.navigationItem.rightBarButtonItem = settingsBar
         self.navigationItem.rightBarButtonItem?.menu = barButtonMenu
         self.navigationItem.hidesSearchBarWhenScrolling = true
     }
     
-    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-        self.navigationItem.title = item.title
-    }
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+//    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+//        self.navigationItem.title =
+//    }
 
 }

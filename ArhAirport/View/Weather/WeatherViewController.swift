@@ -44,9 +44,6 @@ final class WeatherViewController: UIViewController {
                                                        subitems: [item])
 
         let section = NSCollectionLayoutSection(group: group)
-//
-//        let decoration = NSCollectionLayoutDecorationItem.background(elementKind: "decorator")
-//        decoration.contentInsets = .init(top: 16, leading: 16, bottom: 16, trailing: 16)
 
         let layout = UICollectionViewCompositionalLayout(section: section)
 
@@ -172,12 +169,6 @@ final class WeatherViewController: UIViewController {
             make.top.equalTo(precipitation.snp.bottom).offset(8)
             make.bottom.equalToSuperview().inset(8)
         }
-//
-//        pressureLabel.snp.makeConstraints { make in
-//            make.leading.trailing.equalToSuperview().inset(16)
-//            make.top.equalTo(windLabel.snp.bottom).offset(8)
-//
-//        }
     }
     
     required init?(coder aDecoder: NSCoder) {

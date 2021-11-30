@@ -11,6 +11,7 @@ import UIKit
 struct Constants {
     static let navigationBarColor = #colorLiteral(red: 0.1699241276, green: 0.488913675, blue: 0.7010199858, alpha: 1)
     static let tabBarColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+    static let collectionColor = #colorLiteral(red: 0.745651462, green: 0.745651462, blue: 0.745651462, alpha: 1)
 
     public enum DescriptionString: String {
         case airportLabel = "Аэропорт Талаги"

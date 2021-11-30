@@ -44,6 +44,10 @@
 		A8654A0C26A18A88003B67A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8654A0B26A18A88003B67A9 /* Assets.xcassets */; };
 		A8654A0F26A18A88003B67A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8654A0D26A18A88003B67A9 /* LaunchScreen.storyboard */; };
 		A86600A926B9037900DA28A9 /* ApiAirport.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86600A826B9037900DA28A9 /* ApiAirport.swift */; };
+		A8828A8F2755632200A61FFC /* ContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8828A8E2755632200A61FFC /* ContactViewModel.swift */; };
+		A88731DA2756509F00800ED3 /* ContactViewCollectionDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88731D92756509F00800ED3 /* ContactViewCollectionDecorator.swift */; };
+		A88C44A0275613DC000C2A23 /* ContactCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88C449F275613DC000C2A23 /* ContactCollectionCell.swift */; };
+		A88C44A227561F71000C2A23 /* ContactTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88C44A127561F71000C2A23 /* ContactTypeModel.swift */; };
 		A89CF7A727537E80004A2C22 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A89CF7A627537E80004A2C22 /* GoogleService-Info.plist */; };
 		A89CF7B2275397BE004A2C22 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = A89CF7B1275397BE004A2C22 /* FirebaseAnalytics */; };
 		A89CF7B4275397BE004A2C22 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = A89CF7B3275397BE004A2C22 /* FirebaseCrashlytics */; };
@@ -94,6 +98,10 @@
 		A8654A0E26A18A88003B67A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A8654A1026A18A88003B67A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A86600A826B9037900DA28A9 /* ApiAirport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiAirport.swift; sourceTree = "<group>"; };
+		A8828A8E2755632200A61FFC /* ContactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewModel.swift; sourceTree = "<group>"; };
+		A88731D92756509F00800ED3 /* ContactViewCollectionDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewCollectionDecorator.swift; sourceTree = "<group>"; };
+		A88C449F275613DC000C2A23 /* ContactCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCollectionCell.swift; sourceTree = "<group>"; };
+		A88C44A127561F71000C2A23 /* ContactTypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTypeModel.swift; sourceTree = "<group>"; };
 		A89CF7A627537E80004A2C22 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A89CF7B52753EE66004A2C22 /* WeatherHourlyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherHourlyCell.swift; sourceTree = "<group>"; };
 		A8A747B0273C2ED700A75F9B /* Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factory.swift; sourceTree = "<group>"; };
@@ -125,30 +133,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1109613D26F91E5800C78F9F /* Departure */ = {
+		1109613D26F91E5800C78F9F /* DepartureModel */ = {
 			isa = PBXGroup;
 			children = (
 				A8E9142A26C40C66003CA804 /* DepartureModelView.swift */,
 				A8E9142C26C415D0003CA804 /* PageDepartureModelView.swift */,
 				A8A747B4273C620300A75F9B /* DepartureFactory.swift */,
 			);
-			path = Departure;
+			path = DepartureModel;
 			sourceTree = "<group>";
 		};
-		1109613E26F91E6700C78F9F /* Arrival */ = {
+		1109613E26F91E6700C78F9F /* ArrivalModel */ = {
 			isa = PBXGroup;
 			children = (
 				11D9A69E26F8F8D100EE4C9E /* ArrivalModelView.swift */,
 				11D9A69C26F8F8BB00EE4C9E /* PageArrivalModelView.swift */,
 				A8A747B2273C5E2C00A75F9B /* ArrivalFactory.swift */,
 			);
-			path = Arrival;
+			path = ArrivalModel;
 			sourceTree = "<group>";
 		};
 		1109613F26F91E7E00C78F9F /* Contact */ = {
 			isa = PBXGroup;
 			children = (
+				A8828A8C275561B300A61FFC /* ContactModel */,
 				A83BEAD126A55D3400BE2890 /* ContactViewController.swift */,
+				A88731D92756509F00800ED3 /* ContactViewCollectionDecorator.swift */,
+				A88C449F275613DC000C2A23 /* ContactCollectionCell.swift */,
+				A88C44A127561F71000C2A23 /* ContactTypeModel.swift */,
 			);
 			path = Contact;
 			sourceTree = "<group>";
@@ -207,6 +219,7 @@
 		117BD40D270F5FD8009C7271 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				117BD40E270F5FF9009C7271 /* DataModel */,
 				117BD40A270F5F45009C7271 /* DataBaseService.swift */,
 				A815E8E2274CD972004FE6B5 /* RequestService */,
 				A8A747B6273C628600A75F9B /* Service.swift */,
@@ -228,6 +241,7 @@
 		A815E8E2274CD972004FE6B5 /* RequestService */ = {
 			isa = PBXGroup;
 			children = (
+				117BD40C270F5F6B009C7271 /* RequestModel */,
 				A86600A826B9037900DA28A9 /* ApiAirport.swift */,
 				A815E8E0274CD96C004FE6B5 /* ApiWeather.swift */,
 			);
@@ -242,48 +256,32 @@
 				A8F6BA472708BE4700FF4540 /* MenuBarCell.swift */,
 				1109614026F91E9200C78F9F /* Weather */,
 				1109613F26F91E7E00C78F9F /* Contact */,
-				A83BEAE726A5972400BE2890 /* DepartureViewController */,
-				A83BEAD926A561EE00BE2890 /* ArrivalTableViewPage */,
+				A83BEAE726A5972400BE2890 /* Departure */,
+				A83BEAD926A561EE00BE2890 /* Arrival */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		A83BEAD926A561EE00BE2890 /* ArrivalTableViewPage */ = {
+		A83BEAD926A561EE00BE2890 /* Arrival */ = {
 			isa = PBXGroup;
 			children = (
+				1109613E26F91E6700C78F9F /* ArrivalModel */,
 				A83BEAD526A55D8F00BE2890 /* ArrivalViewController.swift */,
 				A83BEADA26A5625100BE2890 /* PageArrivalCollectionCell.swift */,
 				1109614326F91FE000C78F9F /* SupportView */,
 			);
-			path = ArrivalTableViewPage;
+			path = Arrival;
 			sourceTree = "<group>";
 		};
-		A83BEAE626A5827000BE2890 /* Model */ = {
+		A83BEAE726A5972400BE2890 /* Departure */ = {
 			isa = PBXGroup;
 			children = (
-				117BD40C270F5F6B009C7271 /* RequestModel */,
-				117BD40E270F5FF9009C7271 /* DataModel */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		A83BEAE726A5972400BE2890 /* DepartureViewController */ = {
-			isa = PBXGroup;
-			children = (
+				1109613D26F91E5800C78F9F /* DepartureModel */,
 				A83BEAD726A55DAE00BE2890 /* DepartureViewController.swift */,
 				A83BEAE926A5B91600BE2890 /* PageDepartureCollectionCell.swift */,
 				A8E9143026C5506F003CA804 /* SupportView */,
 			);
-			path = DepartureViewController;
-			sourceTree = "<group>";
-		};
-		A83BEAE826A5AEBE00BE2890 /* ModelView */ = {
-			isa = PBXGroup;
-			children = (
-				1109613E26F91E6700C78F9F /* Arrival */,
-				1109613D26F91E5800C78F9F /* Departure */,
-			);
-			path = ModelView;
+			path = Departure;
 			sourceTree = "<group>";
 		};
 		A86549F626A18A86003B67A9 = {
@@ -309,8 +307,6 @@
 				A8654A0226A18A86003B67A9 /* AppDelegate.swift */,
 				A8654A0426A18A86003B67A9 /* SceneDelegate.swift */,
 				115EC8122712DC4800EE446B /* Support */,
-				A83BEAE826A5AEBE00BE2890 /* ModelView */,
-				A83BEAE626A5827000BE2890 /* Model */,
 				A83BEAD026A55CEB00BE2890 /* View */,
 				A8654A0B26A18A88003B67A9 /* Assets.xcassets */,
 				A8654A0D26A18A88003B67A9 /* LaunchScreen.storyboard */,
@@ -318,6 +314,14 @@
 				A8654A1026A18A88003B67A9 /* Info.plist */,
 			);
 			path = ArhAirport;
+			sourceTree = "<group>";
+		};
+		A8828A8C275561B300A61FFC /* ContactModel */ = {
+			isa = PBXGroup;
+			children = (
+				A8828A8E2755632200A61FFC /* ContactViewModel.swift */,
+			);
+			path = ContactModel;
 			sourceTree = "<group>";
 		};
 		A8E9143026C5506F003CA804 /* SupportView */ = {
@@ -446,10 +450,14 @@
 				A8F6BA482708BE4700FF4540 /* MenuBarCell.swift in Sources */,
 				A8E9142B26C40C66003CA804 /* DepartureModelView.swift in Sources */,
 				A86600A926B9037900DA28A9 /* ApiAirport.swift in Sources */,
+				A88731DA2756509F00800ED3 /* ContactViewCollectionDecorator.swift in Sources */,
+				A8828A8F2755632200A61FFC /* ContactViewModel.swift in Sources */,
 				A8A747B1273C2ED700A75F9B /* Factory.swift in Sources */,
 				117BD412270F601F009C7271 /* ArrivalDB.swift in Sources */,
 				A813C30F274578F60034BEE2 /* WeatherPresenter.swift in Sources */,
+				A88C44A227561F71000C2A23 /* ContactTypeModel.swift in Sources */,
 				A83BEAD826A55DAE00BE2890 /* DepartureViewController.swift in Sources */,
+				A88C44A0275613DC000C2A23 /* ContactCollectionCell.swift in Sources */,
 				A815E8E6274CFF90004FE6B5 /* WeatherViewInput.swift in Sources */,
 				115EC8142712DC6600EE446B /* Extension + Realm.swift in Sources */,
 				A815E8E8274D0013004FE6B5 /* WeatherViewOutput.swift in Sources */,

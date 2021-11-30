@@ -12,9 +12,24 @@ import Firebase
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
         FirebaseApp.configure()
+        updateForNewVersion()
         return true
+    }
+
+    private func updateForNewVersion() {
+        if #available(iOS 15, *) {
+            let appearance = UINavigationBarAppearance()
+            appearance.configureWithOpaqueBackground()
+            appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+            appearance.backgroundColor = Constants.navigationBarColor
+            UINavigationBar.appearance().standardAppearance = appearance;
+            UINavigationBar.appearance().scrollEdgeAppearance = appearance
+            UITableView.appearance().sectionHeaderTopPadding = 0
+
+        } else {
+            UINavigationBar.appearance().barTintColor = Constants.navigationBarColor
+        }
     }
 
     // MARK: UISceneSession Lifecycle

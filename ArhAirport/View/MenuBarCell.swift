@@ -35,7 +35,6 @@ class MenuBarCell: UICollectionViewCell {
     override var isHighlighted: Bool {
         didSet {
             title.textColor = isHighlighted ? .white : .black
-
         }
     }
     override var isSelected: Bool {

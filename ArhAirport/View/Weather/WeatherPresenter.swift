@@ -10,7 +10,7 @@ import Foundation
 final class WeatherPresenter {
     private var weatherInteractor: WeatherInteractor
 
-    var view: WeatherViewInput!
+    weak var view: WeatherViewInput!
 
     init(weatherInteractor: WeatherInteractor) {
         self.weatherInteractor = weatherInteractor

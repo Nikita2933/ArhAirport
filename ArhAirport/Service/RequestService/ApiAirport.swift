@@ -63,14 +63,14 @@ final class ApiAirport {
                     let decodedData = try JSONDecoder().decode(ArrivalModel.self, from: data)
                     closure(.success(decodedData))
                 } catch  {
-                    closure(.failure(.decodeError)) //MARK: Вывести алерт с ошибкой
+                    closure(.failure(.decodeError))
                 }
             case .departure:
                 do {
                     let decodedData = try JSONDecoder().decode(DeparturesModel.self, from: data)
                     closure(.success(decodedData))
                 } catch  {
-                    closure(.failure(.decodeError))  //MARK: Вывести алерт с ошибкой
+                    closure(.failure(.decodeError))
                 }
             }
         }

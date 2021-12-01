@@ -27,7 +27,7 @@ final class WeatherInteractor {
 
             switch result {
             case .failure(let error):
-                print(error) //вывести алерт с ошибкой
+                print(error) 
             case .success(let weatherModel):
                 self.dataService.addToRealmWeather(model: weatherModel, oldModel: oldmodel)
             }

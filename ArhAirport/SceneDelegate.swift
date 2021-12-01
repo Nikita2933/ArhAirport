@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: windowscene.coordinateSpace.bounds)
         self.window?.overrideUserInterfaceStyle = .light
         let navigator = UINavigationController()
-
+        
         navigator.navigationBar.barTintColor = Constants.navigationBarColor
         let root = TabBarViewController()
         navigator.viewControllers = [root]

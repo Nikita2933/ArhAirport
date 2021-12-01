@@ -29,4 +29,3 @@ class DepartureDataList: Object {
     @objc dynamic var arrivalTime = ""
     @objc dynamic var departureTime = ""
 }
-

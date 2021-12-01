@@ -64,7 +64,7 @@ class TabBarViewController: UITabBarController {
     }
 
     private func setupNavigator() {
-        self.navigationItem.title = Constants.DescriptionString.departure.rawValue
+        self.navigationItem.title = Constants.DescriptionString.arrival.rawValue
         self.navigationItem.rightBarButtonItem = settingsBar
         self.navigationItem.rightBarButtonItem?.menu = barButtonMenu
         self.navigationItem.hidesSearchBarWhenScrolling = true

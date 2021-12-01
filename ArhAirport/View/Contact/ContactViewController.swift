@@ -55,10 +55,10 @@ final class ContactViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         title = Constants.DescriptionString.contact.rawValue
         configure()
-        // Do any additional setup after loading the view.
-        
+
     }
 
     private func configure(){
@@ -106,8 +106,4 @@ extension ContactViewController: UICollectionViewDataSource {
         cell.update(model: ContactType.allCases[indexPath.section])
         return cell
     }
-
-
-
-
 }

@@ -26,7 +26,7 @@ class CurrentData: Object {
     @objc dynamic var pressure: Int = 0
     @objc dynamic var humidity: Int = 0
     @objc dynamic var dewPoint: Double = 0
-    @objc dynamic var uvi: Int = 0
+    let uvi = RealmProperty<Double?>()
     @objc dynamic var clouds: Int = 0
     @objc dynamic var visibility: Int = 0
     @objc dynamic var windSpeed: Double = 0

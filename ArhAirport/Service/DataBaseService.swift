@@ -138,7 +138,7 @@ final class DataBaseService {
         currentData.pressure = currentModel.pressure
         currentData.humidity = currentModel.humidity
         currentData.dewPoint = currentModel.dewPoint
-        currentData.uvi = currentModel.uvi
+        currentData.uvi.value = currentModel.uvi
         currentData.clouds = currentModel.clouds
         currentData.visibility = currentModel.visibility
         currentData.windSpeed = currentModel.windSpeed

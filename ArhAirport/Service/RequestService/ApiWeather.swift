@@ -53,7 +53,6 @@ final class ApiWeather {
                    interceptor: nil,
                    requestModifier: .none)
             .responseString { result in
-
                 if result.error != nil {
                     closure(.failure(.badGateway))
                     return

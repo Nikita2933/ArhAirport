@@ -10,7 +10,7 @@ import SnapKit
 
 final class WeatherViewController: UIViewController {
 
-    weak var output: WeatherViewOutput?
+    var output: WeatherViewOutput!
 
     var weatherDataModel: WeatherDataModel?
 
@@ -99,7 +99,7 @@ final class WeatherViewController: UIViewController {
         super.viewDidLoad()
         addView()
         setupConstraint()
-        output?.viewDidLoad()
+        output.viewDidLoad()
     }
     
     init() {

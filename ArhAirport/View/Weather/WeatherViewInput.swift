@@ -7,7 +7,8 @@
 
 import Foundation
 
-protocol WeatherViewInput {
+protocol WeatherViewInput: AnyObject {
+    
     func setup(viewModels: WeatherDataModel?)
 
     var weatherDataModel: WeatherDataModel? { get set }

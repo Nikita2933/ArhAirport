@@ -32,11 +32,6 @@
 		A815E8E6274CFF90004FE6B5 /* WeatherViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A815E8E5274CFF90004FE6B5 /* WeatherViewInput.swift */; };
 		A815E8E8274D0013004FE6B5 /* WeatherViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A815E8E7274D0013004FE6B5 /* WeatherViewOutput.swift */; };
 		A829AD1C27A2994300891D98 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A829AD1B27A2994200891D98 /* README.md */; };
-		A829AD2027A2998F00891D98 /* sm2.gif in Resources */ = {isa = PBXBuildFile; fileRef = A829AD1E27A2998E00891D98 /* sm2.gif */; };
-		A829AD2127A2998F00891D98 /* sm1.gif in Resources */ = {isa = PBXBuildFile; fileRef = A829AD1F27A2998F00891D98 /* sm1.gif */; };
-		A829AD2527A2999B00891D98 /* pic2.png in Resources */ = {isa = PBXBuildFile; fileRef = A829AD2227A2999B00891D98 /* pic2.png */; };
-		A829AD2627A2999B00891D98 /* pic1.png in Resources */ = {isa = PBXBuildFile; fileRef = A829AD2327A2999B00891D98 /* pic1.png */; };
-		A829AD2727A2999B00891D98 /* pic3.png in Resources */ = {isa = PBXBuildFile; fileRef = A829AD2427A2999B00891D98 /* pic3.png */; };
 		A83BEACF26A55C5A00BE2890 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83BEACE26A55C5A00BE2890 /* TabBarViewController.swift */; };
 		A83BEAD226A55D3400BE2890 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83BEAD126A55D3400BE2890 /* ContactViewController.swift */; };
 		A83BEAD426A55D8100BE2890 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83BEAD326A55D8100BE2890 /* WeatherViewController.swift */; };
@@ -90,11 +85,6 @@
 		A815E8E5274CFF90004FE6B5 /* WeatherViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewInput.swift; sourceTree = "<group>"; };
 		A815E8E7274D0013004FE6B5 /* WeatherViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewOutput.swift; sourceTree = "<group>"; };
 		A829AD1B27A2994200891D98 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		A829AD1E27A2998E00891D98 /* sm2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = sm2.gif; sourceTree = "<group>"; };
-		A829AD1F27A2998F00891D98 /* sm1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = sm1.gif; sourceTree = "<group>"; };
-		A829AD2227A2999B00891D98 /* pic2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pic2.png; sourceTree = "<group>"; };
-		A829AD2327A2999B00891D98 /* pic1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pic1.png; sourceTree = "<group>"; };
-		A829AD2427A2999B00891D98 /* pic3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pic3.png; sourceTree = "<group>"; };
 		A83BEACE26A55C5A00BE2890 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		A83BEAD126A55D3400BE2890 /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		A83BEAD326A55D8100BE2890 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
@@ -260,18 +250,6 @@
 			path = RequestService;
 			sourceTree = "<group>";
 		};
-		A829AD1D27A2994D00891D98 /* Readme */ = {
-			isa = PBXGroup;
-			children = (
-				A829AD2327A2999B00891D98 /* pic1.png */,
-				A829AD2227A2999B00891D98 /* pic2.png */,
-				A829AD2427A2999B00891D98 /* pic3.png */,
-				A829AD1F27A2998F00891D98 /* sm1.gif */,
-				A829AD1E27A2998E00891D98 /* sm2.gif */,
-			);
-			path = Readme;
-			sourceTree = "<group>";
-		};
 		A83BEAD026A55CEB00BE2890 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -312,7 +290,6 @@
 			isa = PBXGroup;
 			children = (
 				A829AD1B27A2994200891D98 /* README.md */,
-				A829AD1D27A2994D00891D98 /* Readme */,
 				A8654A0126A18A86003B67A9 /* ArhAirport */,
 				A8654A0026A18A86003B67A9 /* Products */,
 				116662002707A67000EA09DB /* Frameworks */,
@@ -432,11 +409,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A829AD2627A2999B00891D98 /* pic1.png in Resources */,
-				A829AD2127A2998F00891D98 /* sm1.gif in Resources */,
-				A829AD2727A2999B00891D98 /* pic3.png in Resources */,
-				A829AD2027A2998F00891D98 /* sm2.gif in Resources */,
-				A829AD2527A2999B00891D98 /* pic2.png in Resources */,
 				A8654A0F26A18A88003B67A9 /* LaunchScreen.storyboard in Resources */,
 				A8654A0C26A18A88003B67A9 /* Assets.xcassets in Resources */,
 				A829AD1C27A2994300891D98 /* README.md in Resources */,

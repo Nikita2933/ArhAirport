@@ -15,5 +15,5 @@
 3. Добавить меню с настройками
 
 ![gif1](sm1.gif) ![gif2](sm2.gif)
-![pic1](pic1.gif) ![pic2](pic2.gif)
-![pic3](pic2.gif)
+![pic1](pic1.png) ![pic2](pic2.png)
+![pic3](pic2.png)
